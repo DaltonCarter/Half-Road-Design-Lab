@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.inventory-container {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}

@@ -1,0 +1,23 @@
+[
+    {
+    "id": 1,
+    "type": "Weapon",
+    "name": "Short Sword",
+    "atk-pwr": 5,
+    "price": 200,
+    "s-price": 100,
+    "amount": 0,
+    "desc": "A simple short sword, made so that even the untrained can use it."
+    },
+
+    {
+        "id": 2,
+        "type": "Armor",
+        "name": "Leather Armor",
+        "def-pwr": 5,
+        "price": 200,
+        "s-price": 100,
+        "amount": 0,
+        "desc": "A suit of light armor made from tanned leather."
+    }
+]

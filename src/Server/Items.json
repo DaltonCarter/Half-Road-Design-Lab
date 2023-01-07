@@ -1,0 +1,100 @@
+[
+{
+    "id": 1,
+    "name": "Potion",
+    "desc": "Heals the user for 20Hp.",
+    "price": 50,
+    "s-price": 25,
+    "amount": 0
+},
+
+{
+    "id": 2,
+    "name": "Hi-Potion",
+    "desc": "Heals the user for 60Hp.",
+    "price": 200,
+    "s-price": 100,
+    "amount": 0
+},
+
+{
+    "id": 3,
+    "name": "X-Potion",
+    "desc": "Heals the user for 120Hp.",
+    "price": 500,
+    "s-price": 250,
+    "amount": 0
+},
+
+{
+    "id": 4,
+    "name": "Ether",
+    "desc": "Restores 20Mp to the user.",
+    "price": 100,
+    "s-price": 50,
+    "amount": 0
+},
+
+{
+    "id": 5,
+    "name": "Arcane Ether",
+    "desc": "Restores 150Mp to the user.",
+    "price": 1000,
+    "s-price": 500,
+    "amount": 0
+},
+
+{
+    "id": 6,
+    "name": "Elixer",
+    "desc": "Fully restores Hp and Mp for the user.",
+    "price": 1000,
+    "s-price": 500,
+    "amount": 0
+},
+
+{
+    "id": 7,
+    "name": "Megalixer",
+    "desc": "Fully restores Hp and Mp for the party.",
+    "price": 5000,
+    "s-price": 2500,
+    "amount": 0
+},
+
+{
+    "id": 8,
+    "name": "Phoenix Feather",
+    "desc": "Revives a fallen ally to 25% health.",
+    "price": 250,
+    "s-price": 125,
+    "amount": 0
+},
+
+{
+    "id": 9,
+    "name": "Phoenix Pinion",
+    "desc": "Revives and fully heals a fallen ally.",
+    "price": 1000,
+    "s-price": 500,
+    "amount": 0
+},
+
+{
+    "id": 10,
+    "name": "Antidote",
+    "desc": "Cures an ally of poison.",
+    "price": 50,
+    "s-price": 25,
+    "amount": 0
+},
+
+{
+    "id": 11,
+    "name": "Echo herb",
+    "desc": "Cures an ally of silence.",
+    "price": 1000,
+    "s-price": 500,
+    "amount": 0
+}
+]

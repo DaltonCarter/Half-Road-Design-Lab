@@ -1,61 +1,57 @@
 import React from 'react'
 import Button from '../Button'
+import Equipment from '../../Server/Equipment.json'
+import Items from '../../Server/Items.json'
+import KeyItems from '../../Server/Key-Items.json'
 
-function Loot({amount, wallet, itemInventory, items, equipment, setItemInventory, equipInventory, setEquipInventory, setWallet,  displayHandler}) {
+function Loot({handleWallet, handleAddConsumable, handleAddEquipment, handleAddKeyItem, displayHandler}) {
 
-const xalGain = (amount, wallet) => {
-  let newBalance = wallet += amount
-  setWallet(newBalance)
+  const randomMoney= () => {
+    let amount = Math.floor(Math.random() * 1000)
+    return handleWallet(amount)
+  }
 
-  console.log(`Your current balance is ${wallet} Xal!`)
-}
+  const randomItem= () => {
+    const itemDrop = Math.floor(Math.random() * 11)
+    if(itemDrop > 0){
+      const item = Items[ Math.floor(Math.random() * Items.length)]
+      console.log(item)
+         item.amount = 1
+    handleAddConsumable(item)
+    } 
+    else {
+      console.log('You get NOTHING~')
+    }
+  }
 
-const itemGain = () => {
-  console.log('You got an Item!')
-  setItemInventory(itemInventory += 1)
-  console.log(`You have ${itemInventory} items`)
+  const randomEquipment= () => {
+    const equipDrop = Math.floor(Math.random() * 3)
+    console.log(equipDrop)
+    if(equipDrop > 0){
+    const equip = Equipment[ Math.floor(Math.random() * Equipment.length)]
+    equip.amount = 1
 
-//Ok if I am thinking about this correctly I would need to find if the item already exists in the Inventory
-//and update the amount if it exists, or add it in if it does not.  Looking at this in type sounds like it will
-//be far simpler if I do that in the back end through SQL or typical DB manipulation.
+    console.log(equip)
+    handleAddEquipment(equip)
+    } else {
+      console.log('You get NOTHING~')
+    }
+    
+  }
 
-//Inventory ID, and an Item ID, amount to be added/on hand
+  const randomKeyItem= () => {
 
-// let newItems = inventory.findIndex(ite => ite.id = items.id)
-  // newItems.amount += items.amount
-  // setInventory(prevInventory => [...prevInventory, newItems])
+  }
+    
 
-}
-
-  
-  
-
-
-const equipGain = () => {
-  console.log('You got a peice of equipment!')
-  setEquipInventory(equipInventory += 1)
-  console.log(`You have ${equipInventory} pieces of equipment.`)
-
-
-//Ok if I am thinking about this correctly I would need to find if the equipment already exists in the Inventory
-//and update the amount if it exists, or add it in if it does not.  Looking at this in type sounds like it will
-//be far simpler if I do that in the back end through SQL or typical DB manipulation.
-
-//Inventory ID, and an equip ID, amount to be added/on hand
-
-
-
-  // let newEquip = inventory.findIndex(equip => equip.id = equipment.id)
-  // newEquip.amount += equipment.amount
-  // setInventory(prevInventory => [...prevInventory, newItems])
-}
 
   return (
     <div className='money-gain-modal'>
         
-        <Button onClick={() => xalGain(amount, wallet)} type={'Money Button'}/>
-        <Button onClick={() => itemGain()} type={'Item Button'}/>
-        <Button onClick={() => equipGain()} type={'Equipment Button'}/>
+        <Button onClick={() => randomMoney()} type={'Money Button'}/>
+        <Button onClick={() => randomItem()} type={'Item Button'}/>
+        <Button onClick={() => randomEquipment()} type={'Equipment Button'}/>
+        {/* <Button onClick={() => handleAddKeyItem(keyItem)} type={'Equipment Button'}/> */}
         <Button onClick={displayHandler} type={'Close'}/>
     </div>
     
