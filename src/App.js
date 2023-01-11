@@ -4,23 +4,22 @@ import Loot from './components/DummyComponents/Loot';
 import Button from './components/Button';
 import ShopScene from './components/ShopScene/ShopScene';
 import Database from './components/DummyComponents/Database';
-import Equipment from './Server/Equipment.json'
-import Items from './Server/Items.json'
-import KeyItems from './Server/Key-Items.json'
-import InventoryFunnel from './components/DummyMIddleMan/InventoryFunnel';
+import InventoryDisplay from './components/InventoryDisplay/InventoryDisplay';
 
 function App() {
 const [lootAccess, setLootAccess] = useState(false)
+const [showShop, setShowShop] = useState(false)
 
 
 
+
+const displayShop = () => {
+  setShowShop(!showShop)
+  
+}
 
 const displayHandler = () => {
-  if(lootAccess === true){
-    setLootAccess(false)
-  }else {
-    setLootAccess(true)
-  }
+  setLootAccess(!lootAccess)
   
 }
 
@@ -33,14 +32,15 @@ const displayHandler = () => {
 
         
         <Button onClick={displayHandler} type={'Loot Button'}/>
-        {lootAccess && <InventoryFunnel  displayHandler={displayHandler}/>}
-        {/* <ShopScene wallet={wallet} setWallet={setWallet} itemInventory={itemInventory} setItemInventory={setItemInventory} equipInventory={equipInventory} setEquipInventory={setEquipInventory}/> */}
+        {lootAccess && <Loot  displayHandler={displayHandler}/>}
+        <Button onClick={displayShop} type={'Store Button'}/>
+        {showShop && <ShopScene displayShop={displayShop}/>}
         
     </div>
 
     <div className='inventory-container'>
       <Database />
-      {/* <PlayerInventory wallet={0} playerEquipment={[]} playerItems={[]} playerKeyItems={[]}/> */}
+      <InventoryDisplay />
       
     </div>
 

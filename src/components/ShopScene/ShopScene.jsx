@@ -1,14 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import InventoryContext from '../Store/InventoryContext'
 
 import Button from '../Button'
 
 
-function ShopScene({wallet, setWallet, itemInventory, setItemInventory, equipInventory, setEquipInventory}) {
+function ShopScene({displayShop}) {
 const [buy, setBuy] = useState(false)
 const [sell, setSell] = useState(false)
 const [shopText, setShopText] = useState('What will you be doing today?')
-let amount = 100
 
+const inventory = useContext(InventoryContext)
 
 const clickHandler = (type) => {
   if(type === 'Buy'){
@@ -22,61 +23,63 @@ const clickHandler = (type) => {
     setShopText('What would you like to sell?')
 
   } else if(type === 'Items') {
-    if(wallet === 0) {
+    if(inventory.wallet === 0) {
       console.log('You have no money!')
-      setShopText('You have no money!')
+      // setShopText('You have no money!')
+      setShopText('Coming Soon!!')
       setTimeout(() => setShopText('What would you like to buy?'), 2000)
 
     }else {
       console.log('You bought an Item.')
-      setShopText('Thank You!')
-      setWallet(wallet -= amount)
-      setItemInventory(itemInventory += 1)
+      // setShopText('Thank You!')
+      setShopText('Coming Soon!!')
       setTimeout(() => setShopText('What would you like to buy?'), 2000)
     }
 
   }else if(type === 'Equip') {
-    if(wallet === 0){
+    if(inventory.wallet === 0){
       console.log('You have no money!')
-      setShopText('You have no money!')
+      // setShopText('You have no money!')
+      setShopText('Coming Soon!!')
       setTimeout(() => setShopText('What would you like to buy?'), 2000)
       
     }else{
       console.log('You bought some equipment.')
-      setShopText('Thank You!')
-      setWallet(wallet -= amount)
-      setEquipInventory(equipInventory += 1)
+      // setShopText('Thank You!')
+      setShopText('Coming Soon!!')
       setTimeout(() => setShopText('What would you like to buy?'), 2000)
 
     }
   
 
   }else if(type === 'S-Items') {
-    if(itemInventory === 0){
+    if(inventory.playerItems === []){
       console.log("You have nothing to sell!")
-      setShopText('You have nothing to sell!')
+      // setShopText('You have nothing to sell!')
+      setShopText('Coming Soon!!')
       setTimeout(() => setShopText('What would you like to sell?'), 2000)
       
     }else {
       console.log('You sold an item.')
-      setShopText('Pleasure doing business with you!')
-      setWallet(wallet += amount)
-      setItemInventory(itemInventory -= 1)
+      // setShopText('Pleasure doing business with you!')
+      setShopText('Coming Soon!!')
+     
       setTimeout(() => setShopText('What would you like to sell?'), 2000)
     }
   
   
   }else if(type === 'S-Equip') {
-    if(equipInventory === 0){
+    if(inventory.playerEquipment === []){
       console.log("You have nothing to sell!")
-      setShopText('You have nothing to sell!')
+      // setShopText('You have nothing to sell!')
+      setShopText('Coming Soon!!')
       setTimeout(() => setShopText('What would you like to sell?'), 2000)
      
     }else {
       console.log('You sold some equipment.')
-      setShopText('Pleasure doing business with you!')
-      setWallet(wallet += amount)
-      setEquipInventory(equipInventory -= 1)
+      // setShopText('Pleasure doing business with you!')
+      setShopText('Coming Soon!!')
+     
       setTimeout(() => setShopText('What would you like to sell?'), 2000)
     }
    
@@ -99,11 +102,11 @@ const clickHandler = (type) => {
   return (
     <div className='shop-scene'>
       <p>Welcome to our Shop!</p>
-      <p>{wallet} Xal</p>
-      <p>{itemInventory} items in possession.</p>
-      <p>{equipInventory} equipment in possession.</p>
+
       <div>
         {shopText} 
+        <br/>
+        Your Funds: {inventory.wallet} Xal
         <br/>
         
         {!buy && !sell  && <Button onClick={() => clickHandler('Buy')} type='buy' />}
@@ -113,7 +116,8 @@ const clickHandler = (type) => {
         {!sell && !buy && <Button onClick={() => clickHandler('Sell')} type={'sell'} />}
         { sell && <Button onClick={() => clickHandler('S-Items')} type={'S-Items'}/>} 
         { sell && <Button onClick={() => clickHandler('S-Equip')} type={'S-Equip'}/>} 
-        { sell && <Button onClick={() => clickHandler('Close')} type={'Close'}/>} 
+        { sell && <Button onClick={() => clickHandler('Close')} type={'Close'}/>}
+        {!buy && !sell  && <Button onClick={() => displayShop()} type={'Close'}/> }
       </div>
 
     </div>

@@ -1,14 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Button from '../Button'
 import Equipment from '../../Server/Equipment.json'
 import Items from '../../Server/Items.json'
 import KeyItems from '../../Server/Key-Items.json'
+import InventoryContext from '../Store/InventoryContext'
+// {handleWallet, handleAddConsumable, handleAddEquipment, handleAddKeyItem, displayHandler}
+function Loot({displayHandler}) {
+const inventory = useContext(InventoryContext)
 
-function Loot({handleWallet, handleAddConsumable, handleAddEquipment, handleAddKeyItem, displayHandler}) {
+
 
   const randomMoney= () => {
     let amount = Math.floor(Math.random() * 1000)
-    return handleWallet(amount)
+     inventory.handleWallet(amount)
   }
 
   const randomItem= () => {
@@ -17,7 +21,7 @@ function Loot({handleWallet, handleAddConsumable, handleAddEquipment, handleAddK
       const item = Items[ Math.floor(Math.random() * Items.length)]
       console.log(item)
          item.amount = 1
-    handleAddConsumable(item)
+    inventory.handleAddConsumable(item)
     } 
     else {
       console.log('You get NOTHING~')
@@ -32,7 +36,7 @@ function Loot({handleWallet, handleAddConsumable, handleAddEquipment, handleAddK
     equip.amount = 1
 
     console.log(equip)
-    handleAddEquipment(equip)
+    inventory.handleAddEquipment(equip)
     } else {
       console.log('You get NOTHING~')
     }
