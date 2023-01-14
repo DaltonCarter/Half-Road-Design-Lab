@@ -24,9 +24,14 @@ export const InventoryContextProvider = (props) => {
         return result
       }
   
-      const handleWallet = (amount) => {
+      const handleWallet = (amount, type) => {
+        if(type === 'Increase'){
           let newBalance = wallet + amount
            setWallet(newBalance)
+        }else if (type === 'Decrease') {
+          let newBalance = wallet - amount
+           setWallet(newBalance)
+        }
           
       }
       
@@ -60,7 +65,7 @@ export const InventoryContextProvider = (props) => {
       
       const handleAddConsumable = (item) =>{
         let { id, amount } = item;
-        console.log(id, amount);
+        console.log(item, id, amount);
       
         const existingItem = playerItems.find(item => item.id === id);
       
@@ -91,6 +96,48 @@ export const InventoryContextProvider = (props) => {
           
         }
       }
+
+      const handleRemoveItem = (type, item, amount) => {
+        
+        if(type === 'remove'){
+          console.log('remove ping')
+          let modifiedInventory = [...playerItems]
+          let id = item.id
+          let index = modifiedInventory.findIndex((item) => item.id === id)
+          modifiedInventory.splice(index, 1)
+          console.log(modifiedInventory)
+          setPlayerItems(modifiedInventory)
+        }else if(type === 'modify'){
+          let modifiedInventory = [...playerItems]
+          let id = item.id
+          let index = modifiedInventory.findIndex((item) => item.id === id)
+          modifiedInventory[index] = {
+            ...modifiedInventory[index],
+            amount: modifiedInventory[index].amount - +amount
+        }
+        setPlayerItems(modifiedInventory)
+      }
+    }
+      const handleRemoveEquip = (type, equip, amount) => {
+        if(type === 'remove'){
+          console.log('remove ping')
+          let modifiedInventory = [...playerEquipment]
+          let id = equip.id
+          let index = modifiedInventory.findIndex((item) => item.id === id)
+          modifiedInventory.splice(index, 1)
+          console.log(modifiedInventory)
+          setPlayerEquipment(modifiedInventory)
+        }else if(type === 'modify'){
+          let modifiedInventory = [...playerEquipment]
+          let id = equip.id
+          let index = modifiedInventory.findIndex((item) => item.id === id)
+          modifiedInventory[index] = {
+            ...modifiedInventory[index],
+            amount: modifiedInventory[index].amount - +amount
+        }
+        setPlayerEquipment(modifiedInventory)
+      }
+      }
   
     let contextValue = {
         wallet,
@@ -100,7 +147,9 @@ export const InventoryContextProvider = (props) => {
         handleWallet,
         handleAddConsumable,
         handleAddEquipment,
-        handleAddKeyItem
+        handleAddKeyItem,
+        handleRemoveItem,
+        handleRemoveEquip 
 
     }
 

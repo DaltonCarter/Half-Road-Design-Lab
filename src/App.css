@@ -42,3 +42,10 @@
   justify-content: space-evenly;
   text-align: center;
 }
+
+.store-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  flex-wrap: wrap;
+}

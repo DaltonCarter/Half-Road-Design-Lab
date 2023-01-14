@@ -4,7 +4,6 @@ import Equipment from '../../Server/Equipment.json'
 import Items from '../../Server/Items.json'
 import KeyItems from '../../Server/Key-Items.json'
 import InventoryContext from '../Store/InventoryContext'
-// {handleWallet, handleAddConsumable, handleAddEquipment, handleAddKeyItem, displayHandler}
 function Loot({displayHandler}) {
 const inventory = useContext(InventoryContext)
 
@@ -12,7 +11,7 @@ const inventory = useContext(InventoryContext)
 
   const randomMoney= () => {
     let amount = Math.floor(Math.random() * 1000)
-     inventory.handleWallet(amount)
+     inventory.handleWallet(amount, 'Increase')
   }
 
   const randomItem= () => {
