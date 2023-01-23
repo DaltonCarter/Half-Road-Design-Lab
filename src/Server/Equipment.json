@@ -3,7 +3,7 @@
     "id": 1,
     "type": "Weapon",
     "name": "Short Sword",
-    "atk-pwr": 5,
+    "atkPwr": 5,
     "price": 200,
     "sellPrice": 100,
     "amount": 0,
@@ -12,9 +12,20 @@
 
     {
         "id": 2,
+        "type": "Weapon",
+        "name": "Long Sword",
+        "atkPwr": 10,
+        "price": 500,
+        "sellPrice": 250,
+        "amount": 0,
+        "desc": "A standard foot soldiers sword."
+        },
+
+    {
+        "id": 3,
         "type": "Armor",
         "name": "Leather Armor",
-        "def-pwr": 5,
+        "defPwr": 5,
         "price": 200,
         "sellPrice": 100,
         "amount": 0,

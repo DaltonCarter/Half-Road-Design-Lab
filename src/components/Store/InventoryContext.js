@@ -8,7 +8,8 @@ const InventoryContext = createContext({
     handleWallet: () => {},
     handleAddEquipment: () => {},
     handleAddConsumable: () => {},
-    handleAddKeyItem: () => {}
+    handleAddKeyItem: () => {},
+    setPlayerEquipment: () => {}
 
 })
 
@@ -18,11 +19,6 @@ export const InventoryContextProvider = (props) => {
     const [playerKeyItems, setPlayerKeyItems] = useState([])
     const [wallet, setWallet] = useState(0)
 
-
-    const handleIncrease = (base, increase) => {
-        let result = base + increase
-        return result
-      }
   
       const handleWallet = (amount, type) => {
         if(type === 'Increase'){
@@ -36,7 +32,7 @@ export const InventoryContextProvider = (props) => {
       }
       
       const handleAddEquipment = (equip) =>{
-          
+          console.log(equip)
         let { id, amount } = equip;
         console.log(id, amount);
       
@@ -136,6 +132,25 @@ export const InventoryContextProvider = (props) => {
             amount: modifiedInventory[index].amount - +amount
         }
         setPlayerEquipment(modifiedInventory)
+      }else if(type === 'Equipped'){
+        let id = equip.id
+        const index = playerEquipment.findIndex((item) => item.id === id)
+        console.log(index)
+        if(playerEquipment[index].amount === 1){
+          console.log('ping')
+          let modifiedInventory = [...playerEquipment]
+          modifiedInventory.splice(index, 1)
+          console.log(modifiedInventory)
+          setPlayerEquipment(modifiedInventory)
+        }else {
+          let modifiedInventory = [...playerEquipment]
+          modifiedInventory[index] = {
+            ...modifiedInventory[index],
+            amount: modifiedInventory[index].amount - +amount
+        }
+        setPlayerEquipment(modifiedInventory)
+        }
+    
       }
       }
   

@@ -20,10 +20,11 @@ const ShopDisplay = ({
   const inputHandler = (id, quantity, type) => {
     if (type === "Equip") {
       handleEquipmentPurchase(id, quantity);
+  
       exitHandler();
     } else if (type === "Item") {
       handleItemPurchase(id, quantity);
-      exitHandler();
+      // exitHandler();
     }else if(type === "Sell Item"){
       handleSoldItem(id, quantity);
       exitHandler();
@@ -47,16 +48,19 @@ const ShopDisplay = ({
             <br />
             Quantity:{" "}
             <input
+              id="store-input"
               type="number"
               min="0"
               max="99"
-              onChange={(e) => setQuantity(e.target.value)}
+              onChange={(e) => {setQuantity(e.target.value)}}
               placeholder={0}
             />
             <br />
             <Button
               type={"Buy"}
-              onClick={() => inputHandler(item.id, quantity, "Item")}
+              onClick={(e) => {
+                e.target.value=0
+                inputHandler(item.id, quantity, "Item")}}
             />
           </div>
         ))}
@@ -73,6 +77,7 @@ const ShopDisplay = ({
             <br />
             Quantity:{" "}
             <input
+            id="store-input"
               type="number"
               min="0"
               max="99"
@@ -97,8 +102,11 @@ const ShopDisplay = ({
             <br />
             Sell Price: {item.sellPrice}
             <br />
+            Possessed: {item.amount}
+            <br />
             Quantity:{" "}
             <input
+            id="store-input"
               type="number"
               min="0"
               max={item.amount}
@@ -125,6 +133,7 @@ const ShopDisplay = ({
             <br />
             Quantity:{" "}
             <input
+            id="store-input"
               type="number"
               min="0"
               max={equip.amount}

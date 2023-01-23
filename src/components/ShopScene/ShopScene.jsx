@@ -166,6 +166,7 @@ function ShopScene({ displayShop }) {
     setSellEquipment(false)
     setBuyItems(false)
     setSellItems(false)
+    clickHandler("Close")
     
   }
 
@@ -183,7 +184,7 @@ function ShopScene({ displayShop }) {
         )}
         {buy && <Button onClick={() => clickHandler("Items")} type={"Items"} />}
         {buy && <Button onClick={() => clickHandler("Equip")} type={"Equip"} />}
-        {buy && <Button onClick={() => clickHandler("Close")} type={"Close"} />}
+        {buy && <Button onClick={() => exitHandler()} type={"Close"} />}
         {!sell && !buy && (
           <Button onClick={() => clickHandler("Sell")} type={"sell"} />
         )}
@@ -194,7 +195,7 @@ function ShopScene({ displayShop }) {
           <Button onClick={() => clickHandler("S-Equip")} type={"S-Equip"} />
         )}
         {sell && (
-          <Button onClick={() => clickHandler("Close")} type={"Close"} />
+          <Button onClick={() => exitHandler()} type={"Close"} />
         )}
         {!buy && !sell && (
           <Button onClick={() => displayShop()} type={"Close"} />

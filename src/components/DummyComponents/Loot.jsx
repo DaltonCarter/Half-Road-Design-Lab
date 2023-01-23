@@ -4,8 +4,12 @@ import Equipment from '../../Server/Equipment.json'
 import Items from '../../Server/Items.json'
 import KeyItems from '../../Server/Key-Items.json'
 import InventoryContext from '../Store/InventoryContext'
+import PlayerContext from '../Store/PlayerContext'
+
 function Loot({displayHandler}) {
 const inventory = useContext(InventoryContext)
+const playerCtx = useContext(PlayerContext)
+
 
 
 
@@ -46,7 +50,14 @@ const inventory = useContext(InventoryContext)
 
   }
     
-
+const gainExp = () => {
+  console.log(playerCtx.currentExp)
+  let currentXp = playerCtx.currentExp
+  let randomXp = Math.floor(Math.random() * 500)
+  let newXp = currentXp + randomXp
+  console.log(newXp)
+  playerCtx.setCurrentExp(newXp)
+}
 
   return (
     <div className='money-gain-modal'>
@@ -55,6 +66,8 @@ const inventory = useContext(InventoryContext)
         <Button onClick={() => randomItem()} type={'Item Button'}/>
         <Button onClick={() => randomEquipment()} type={'Equipment Button'}/>
         {/* <Button onClick={() => handleAddKeyItem(keyItem)} type={'Equipment Button'}/> */}
+        <Button onClick={() => gainExp()} type={'Experience Button'}/>
+        <Button onClick={() => playerCtx.fullHeal()} type={'Heal'}/>
         <Button onClick={displayHandler} type={'Close'}/>
     </div>
     

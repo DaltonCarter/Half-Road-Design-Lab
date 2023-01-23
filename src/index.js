@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { InventoryContextProvider } from './components/Store/InventoryContext';
+import { PlayerContextProvider } from './components/Store/PlayerContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <InventoryContextProvider>
-    <App />
+      <PlayerContextProvider>
+        <App />
+      </PlayerContextProvider>
     </InventoryContextProvider>
   </React.StrictMode>
 );
