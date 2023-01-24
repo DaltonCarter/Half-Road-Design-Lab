@@ -24,7 +24,7 @@ const ShopDisplay = ({
       exitHandler();
     } else if (type === "Item") {
       handleItemPurchase(id, quantity);
-      // exitHandler();
+      exitHandler();
     }else if(type === "Sell Item"){
       handleSoldItem(id, quantity);
       exitHandler();
