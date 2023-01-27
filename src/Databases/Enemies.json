@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "Slime",
+        "img": "Green-Slime.png"
+    
+},
+{
+    "id": 2,
+    "name": "Goblin",
+    "img": "Goblin.png"
+
+},
+{
+    "id": 3,
+    "name": "Wolf",
+    "img": "Wolf.png"
+
+},
+{
+    "id": 4,
+    "name": "Chaos",
+    "img": "Chaos.png"
+
+},
+{
+    "id": 5,
+    "name": "Bahamut",
+    "img": "dragon-sprite-png-8.png"
+
+}
+
+
+]

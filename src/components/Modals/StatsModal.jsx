@@ -96,68 +96,11 @@ const StatsModal = ({handleSecondModal}) => {
     let level = PlayerCtx.level
     let exp = PlayerCtx.currentExp
     let nextLevel = PlayerCtx.nextLevel
+    let calculateEquipmentValue = PlayerCtx.calculateEquipmentValue
     
 
     
-    const calculateEquipmentValue = (type) => {
-        if(type === 'Hp'){
-            if(PlayerCtx.accessorySlot !== undefined){
-                let total = PlayerCtx.accessorySlot.hp
-                return total
-            }else {
-                let total = 0
-                return total
-            }
-        }else if(type ==='Attack') {
-            if(PlayerCtx.weaponSlot !== undefined){
-                if(PlayerCtx.accessorySlot !== undefined){
-                    console.log('weapon + accessory hit')
-                    console.log(PlayerCtx.accessorySlot, PlayerCtx.weaponSlot)
-                    let total = PlayerCtx.weaponSlot.atkPwr + PlayerCtx.accessorySlot.atkPwr
-                    return total
-                }else {
-                    console.log('only weapon hit')
-                    let total = PlayerCtx.weaponSlot.atkPwr
-                return total
-                }
-            }else {
-                console.log('else branch hit')
-                let total = 0
-                return total
-            }
-
-        }else if(type === 'Defense'){
-            let shieldValue = 0
-            let helmValue = 0
-            let armorValue = 0
-            let accessoryValue = 0
-            if(PlayerCtx.shieldSlot !== undefined){
-                shieldValue = PlayerCtx.shieldSlot.defPwr
-            }
-            if(PlayerCtx.helmSlot !== undefined){
-                helmValue = PlayerCtx.helmSlot.defPwr
-            }
-            if(PlayerCtx.armorSlot !== undefined){
-                armorValue = PlayerCtx.armorSlot.defPwr
-            }
-            if(PlayerCtx.accessorySlot !== undefined){
-                accessoryValue = PlayerCtx.accessorySlot.defPwr
-            }
-
-            let total = shieldValue + helmValue + armorValue + accessoryValue
-
-            return total
-            
-        }else if(type === 'Agility'){
-            if(PlayerCtx.accessorySlot !== undefined){
-                let total = PlayerCtx.accessorySlot.agi
-                return total
-            }else {
-                let total = 0
-                return total
-            }
-        }
-    }
+   
 
   return (
     <section>

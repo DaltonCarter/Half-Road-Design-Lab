@@ -37,7 +37,7 @@ const ModalOverlay = ({ handleSecondModal, Equipment, weaponSlot, shieldSlot, he
             <select name='Armor' id="Armor" onChange={(e) => EquipArmorHandler(e.target.value)}>
             <option value="" disabled selected>Select an Option</option>
                 {Equipment.filter((w) => w.type === 'Armor').map((w) => (
-                    <option value={w.name}>{w.name}</option>
+                    <option value={w.id}>{w.name}</option>
                 ))}
             </select>
             <label for='Accessory'>Accessory: </label>
@@ -68,8 +68,10 @@ const EquipModal = ({handleSecondModal}) => {
     const { weaponSlot, shieldSlot, helmSlot, armorSlot, accessorySlot} = PlayerCtx
     const [activateEffect, setActivateEffect] = useState(false)
     const [newEquip, setNewEquip] = useState()
+    let calculateEquipmentValue = PlayerCtx.calculateEquipmentValue
 
     const EquipWeaponHandler = (id) => {
+        console.log(id)
     let removedEquip = PlayerCtx.weaponSlot
     let equip = playerEquipment.filter((w) => w.id === +id)
     let equippedWeapon = equip[0]
@@ -84,6 +86,7 @@ const EquipModal = ({handleSecondModal}) => {
     }else{
         PlayerCtx.setWeaponSlot(equippedWeapon)
         Inventory.handleRemoveEquip('Equipped', equippedWeapon, 1)
+        calculateEquipmentValue('Attack')
     }
     
   
@@ -92,45 +95,129 @@ useEffect(() => {
     if(newEquip === undefined){
 
     }else {
-        console.log(newEquip)
-    PlayerCtx.setWeaponSlot(newEquip)
-    Inventory.handleRemoveEquip('Equipped', newEquip, 1)
-    setNewEquip(undefined)
-    setActivateEffect(false)
+        if(newEquip.type === 'Weapon'){
+            console.log(newEquip)
+            PlayerCtx.setWeaponSlot(newEquip)
+            Inventory.handleRemoveEquip('Equipped', newEquip, 1)
+            setNewEquip(undefined)
+            calculateEquipmentValue('Attack')
+            setActivateEffect(false)
+        }else if (newEquip.type === 'Shield'){
+            console.log(newEquip)
+            PlayerCtx.setShieldSlot(newEquip)
+            Inventory.handleRemoveEquip('Equipped', newEquip, 1)
+            setNewEquip(undefined)
+            calculateEquipmentValue('Defense')
+            setActivateEffect(false)
+        }else if (newEquip.type === 'Helm'){
+            console.log(newEquip)
+            PlayerCtx.setHelmSlot(newEquip)
+            Inventory.handleRemoveEquip('Equipped', newEquip, 1)
+            setNewEquip(undefined)
+            calculateEquipmentValue('Defense')
+            setActivateEffect(false)
+        }else if (newEquip.type === 'Armor'){
+            console.log(newEquip)
+            PlayerCtx.setArmorSlot(newEquip)
+            Inventory.handleRemoveEquip('Equipped', newEquip, 1)
+            setNewEquip(undefined)
+            calculateEquipmentValue('Defense')
+            setActivateEffect(false)
+        }else if (newEquip.type === 'Accessory'){
+            console.log(newEquip)
+            PlayerCtx.setAccessorySlot(newEquip)
+            Inventory.handleRemoveEquip('Equipped', newEquip, 1)
+            setNewEquip(undefined)
+            calculateEquipmentValue('Defense')
+            calculateEquipmentValue('Hp')
+            calculateEquipmentValue('Agility')
+            calculateEquipmentValue('Attack')
+            setActivateEffect(false)
+        }
+        
     }
     
 }, [activateEffect])
 
     const EquipShieldHandler = (id) => {
-         // console.log(+id)
-         let equip = playerEquipment.filter((w) => w.id === +id)
-         let equippedShield = equip[0]
-         // console.log(equippedShield)
-         PlayerCtx.setShieldSlot(equippedShield)
+        let removedEquip = PlayerCtx.shieldSlot
+        let equip = playerEquipment.filter((w) => w.id === +id)
+        let equippedShield = equip[0]
+        console.log(equippedShield)
+        setNewEquip(equippedShield)
+        if(removedEquip !== undefined){
+            removedEquip.amount = 1
+            console.log(removedEquip)
+            Inventory.handleAddEquipment(removedEquip)
+            setActivateEffect(true)
+            
+        }else{
+            PlayerCtx.setShieldSlot(equippedShield)
+            Inventory.handleRemoveEquip('Equipped', equippedShield, 1)
+            calculateEquipmentValue('Defense')
+        }
     }
 
     const EquipHelmHandler = (id) => {
-         // console.log(+id)
-         let equip = playerEquipment.filter((w) => w.id === +id)
-         let equippedHelm = equip[0]
-         // console.log(equippedWeapon)
-         PlayerCtx.setHelmSlot(equippedHelm)
+        let removedEquip = PlayerCtx.helmSlot
+        let equip = playerEquipment.filter((w) => w.id === +id)
+        let equippedHelm = equip[0]
+        console.log(equippedHelm)
+        setNewEquip(equippedHelm)
+        if(removedEquip !== undefined){
+            removedEquip.amount = 1
+            console.log(removedEquip)
+            Inventory.handleAddEquipment(removedEquip)
+            setActivateEffect(true)
+            
+        }else{
+            PlayerCtx.setHelmSlot(equippedHelm)
+            Inventory.handleRemoveEquip('Equipped', equippedHelm, 1)
+            calculateEquipmentValue('Defense')
+        }
     }
 
     const EquipArmorHandler = (id) => {
-         // console.log(+id)
-         let equip = playerEquipment.filter((w) => w.id === +id)
-         let equippedArmor = equip[0]
-         // console.log(equippedWeapon)
-         PlayerCtx.setArmorSlot(equippedArmor)
+        console.log(id)
+        let removedEquip = PlayerCtx.armorSlot
+        let equip = playerEquipment.filter((w) => w.id === +id)
+        let equippedArmor = equip[0]
+        console.log(equip, equippedArmor)
+        console.log(equippedArmor)
+        setNewEquip(equippedArmor)
+        if(removedEquip !== undefined){
+            removedEquip.amount = 1
+            console.log(removedEquip)
+            Inventory.handleAddEquipment(removedEquip)
+            setActivateEffect(true)
+            
+        }else{
+            PlayerCtx.setArmorSlot(equippedArmor)
+            Inventory.handleRemoveEquip('Equipped', equippedArmor, 1)
+            calculateEquipmentValue('Defense')
+        }
     }
 
     const EquipAccessoryHandler = (id) => {
-         // console.log(+id)
-         let equip = playerEquipment.filter((w) => w.id === +id)
-         let equippedAccessory = equip[0]
-         // console.log(equippedWeapon)
-         PlayerCtx.setAccessorySlot(equippedAccessory)
+        let removedEquip = PlayerCtx.accessorySlot
+        let equip = playerEquipment.filter((w) => w.id === +id)
+        let equippedAccessory = equip[0]
+        console.log(equippedAccessory)
+        setNewEquip(equippedAccessory)
+        if(removedEquip !== undefined){
+            removedEquip.amount = 1
+            console.log(removedEquip)
+            Inventory.handleAddEquipment(removedEquip)
+            setActivateEffect(true)
+            
+        }else{
+            PlayerCtx.setAccessorySlot(equippedAccessory)
+            Inventory.handleRemoveEquip('Equipped', equippedAccessory, 1)
+            calculateEquipmentValue('Hp')
+            calculateEquipmentValue('Attack')
+            calculateEquipmentValue('Defense')
+            calculateEquipmentValue('Agility')
+        }
     }
 
 

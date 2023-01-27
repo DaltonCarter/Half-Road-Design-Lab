@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import InventoryContext from "../Store/InventoryContext";
-import Items from "../../Server/Items.json";
-import Equipment from "../../Server/Equipment.json";
+import Items from "../../Databases/Items.json";
+import Equipment from "../../Databases/Equipment.json";
 import Button from "../Button";
 import ShopDisplay from "./ShopDisplay";
 

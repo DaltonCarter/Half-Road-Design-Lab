@@ -2,6 +2,19 @@ import React, { useState, useContext } from "react";
 import InventoryContext from "../Store/InventoryContext";
 import Button from "../Button";
 
+// Quantity:{" "}
+//             <input
+//               id="store-input"
+//               type="number"
+//               min="0"
+//               max="99"
+//               value={quantity}
+//               onChange={(e) => {
+//                 setQuantity(e.target.value)
+//               }}
+//               placeholder={0}
+//             />
+
 const ShopDisplay = ({
   type,
   storeItems,
@@ -14,25 +27,30 @@ const ShopDisplay = ({
 
 }) => {
   const [quantity, setQuantity] = useState(0);
+  const [purchaseAmountDisplay, setPurchaseAmount] = useState(false)
 
   const inventory = useContext(InventoryContext)
 
   const inputHandler = (id, quantity, type) => {
-    if (type === "Equip") {
-      handleEquipmentPurchase(id, quantity);
-  
-      exitHandler();
-    } else if (type === "Item") {
-      handleItemPurchase(id, quantity);
-      exitHandler();
-    }else if(type === "Sell Item"){
-      handleSoldItem(id, quantity);
-      exitHandler();
-    }else if(type === "Sell Equip"){
-      handleSoldEquipment(id, quantity);
-      exitHandler();
-    }
-  };
+    if(quantity === 0){
+   
+}else {
+  if (type === "Equip") {
+    handleEquipmentPurchase(id, quantity);
+
+    // exitHandler();
+  } else if (type === "Item") {
+    handleItemPurchase(id, quantity);
+    // exitHandler();
+  }else if(type === "Sell Item"){
+    handleSoldItem(id, quantity);
+    // exitHandler();
+  }else if(type === "Sell Equip"){
+    handleSoldEquipment(id, quantity);
+    // exitHandler();
+  }
+}
+};
 
   return (
     <div className="store-container">
@@ -45,22 +63,12 @@ const ShopDisplay = ({
             Description: {item.desc}
             <br />
             Price: {item.price}
-            <br />
-            Quantity:{" "}
-            <input
-              id="store-input"
-              type="number"
-              min="0"
-              max="99"
-              onChange={(e) => {setQuantity(e.target.value)}}
-              placeholder={0}
-            />
+
+            
             <br />
             <Button
               type={"Buy"}
-              onClick={(e) => {
-                e.target.value=0
-                inputHandler(item.id, quantity, "Item")}}
+              onClick={() => inputHandler(item.id, 1, "Item")}
             />
           </div>
         ))}
@@ -75,7 +83,7 @@ const ShopDisplay = ({
             <br />
             Price: {item.price}
             <br />
-            Quantity:{" "}
+            {/* Quantity:{" "}
             <input
             id="store-input"
               type="number"
@@ -83,11 +91,11 @@ const ShopDisplay = ({
               max="99"
               onChange={(e) => setQuantity(e.target.value)}
               placeholder={0}
-            />
+            /> */}
             <br />
             <Button
               type={"Buy"}
-              onClick={() => inputHandler(item.id, quantity, "Equip")}
+              onClick={() => inputHandler(item.id, 1, "Equip")}
             />
           </div>
         ))}
@@ -104,7 +112,7 @@ const ShopDisplay = ({
             <br />
             Possessed: {item.amount}
             <br />
-            Quantity:{" "}
+            {/* Quantity:{" "}
             <input
             id="store-input"
               type="number"
@@ -112,11 +120,11 @@ const ShopDisplay = ({
               max={item.amount}
               onChange={(e) => setQuantity(e.target.value)}
               placeholder={0}
-            />
+            /> */}
             <br />
             <Button
               type={"Sell"}
-              onClick={() => inputHandler(item.id, quantity, "Sell Item")}
+              onClick={() => inputHandler(item.id, 1, "Sell Item")}
             />
           </div>
         ))}
@@ -131,7 +139,7 @@ const ShopDisplay = ({
             <br />
             Sell Price: {equip.sellPrice}
             <br />
-            Quantity:{" "}
+            {/* Quantity:{" "}
             <input
             id="store-input"
               type="number"
@@ -139,11 +147,11 @@ const ShopDisplay = ({
               max={equip.amount}
               onChange={(e) => setQuantity(e.target.value)}
               placeholder={0}
-            />
+            /> */}
             <br />
             <Button
               type={"Sell"}
-              onClick={() => inputHandler(equip.id, quantity, "Sell Equip")}
+              onClick={() => inputHandler(equip.id, 1, "Sell Equip")}
             />
           </div>
         ))}

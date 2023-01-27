@@ -114,6 +114,7 @@ export const InventoryContextProvider = (props) => {
         setPlayerItems(modifiedInventory)
       }
     }
+    
       const handleRemoveEquip = (type, equip, amount) => {
         if(type === 'remove'){
           console.log('remove ping')

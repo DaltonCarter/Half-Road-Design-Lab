@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { InventoryContextProvider } from './components/Store/InventoryContext';
 import { PlayerContextProvider } from './components/Store/PlayerContext';
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <InventoryContextProvider>
       <PlayerContextProvider>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </PlayerContextProvider>
     </InventoryContextProvider>
   </React.StrictMode>

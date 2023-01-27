@@ -4,6 +4,7 @@ import InventoryContext from '../Store/InventoryContext'
 import InventoryModal from './InventoryModal'
 import StatsModal from './StatsModal'
 import EquipModal from './EquipModal'
+import {NavLink} from 'react-router-dom'
 
 
 const Backdrop = () => {
@@ -18,6 +19,7 @@ const ModalOverlay = ({inventory, handleSecondModal}) => {
         <Button className="menu-button" onClick={() => handleSecondModal('Inventory')} type='Inventory'/>
         <Button className="menu-button" onClick={() => handleSecondModal('Stats')} type='Stats'/>
         <Button className="menu-button" onClick={() => handleSecondModal('Equip')} type='Equip'/>
+        <NavLink to={'/'}><Button className="menu-button" type={'Quit Game'}/></NavLink>
         </div>
         <p className='wallet'>Xal: {inventory.wallet}</p>
         </div>
