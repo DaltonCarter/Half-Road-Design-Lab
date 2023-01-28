@@ -1,0 +1,56 @@
+{
+    "id": 4,
+    "name": "Ether",
+    "desc": "Restores 20Mp to the user.",
+    "price": 100,
+    "sellPrice": 50,
+    "amount": 0
+},
+
+{
+    "id": 5,
+    "name": "Arcane Ether",
+    "desc": "Restores 150Mp to the user.",
+    "price": 1000,
+    "sellPrice": 500,
+    "amount": 0
+},
+
+
+
+{
+    "id": 8,
+    "name": "Phoenix Feather",
+    "desc": "Revives a fallen ally to 25% health.",
+    "price": 250,
+    "sellPrice": 125,
+    "amount": 0
+},
+
+{
+    "id": 9,
+    "name": "Phoenix Pinion",
+    "desc": "Revives and fully heals a fallen ally.",
+    "price": 1000,
+    "sellPrice": 500,
+    "amount": 0
+},
+
+{
+    "id": 10,
+    "name": "Antidote",
+    "desc": "Cures an ally of poison.",
+    "price": 50,
+    "sellPrice": 25,
+    "amount": 0
+},
+
+{
+    "id": 11,
+    "name": "Echo herb",
+    "desc": "Cures an ally of silence.",
+    "price": 1000,
+    "sellPrice": 500,
+    "amount": 0
+}
+]

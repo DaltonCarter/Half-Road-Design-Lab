@@ -16,7 +16,7 @@ function Loot({ displayHandler }) {
   };
 
   const randomItem = () => {
-    const itemDrop = Math.floor(Math.random() * 11);
+    const itemDrop = Math.floor(Math.random() * 5);
     if (itemDrop > 0) {
       const item = Items[Math.floor(Math.random() * Items.length)];
       console.log(item);
