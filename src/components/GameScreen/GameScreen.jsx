@@ -4,13 +4,15 @@ import Button from '../Button'
 import ShopScene from '../ShopScene/ShopScene';
 import MenuModal from '../Modals/MenuModal';
 import {NavLink} from 'react-router-dom'
-
+import LoadGameModal from '../Modals/LoadGameModal';
+import AuthContext from '../Store/authContext';
 
 const GameScreen = () => {
     const [lootAccess, setLootAccess] = useState(false)
     const [showShop, setShowShop] = useState(false)
     const [displayMenu, setDisplayMenu] = useState(false)
-    
+    const [displayLoad, setDisplayLoad] = useState(false)
+    const authCtx = useContext(AuthContext)
 
 
     const handleKeyPress = useCallback((event) => {
@@ -58,7 +60,8 @@ const GameScreen = () => {
         <Button className={'m-5 border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-blue-500 hover:bg-blue-300 focus:translate-y-1'} onClick={displayShop} type={'Store Button'}/>
         {showShop && <ShopScene displayShop={displayShop}/>}
         <NavLink to={'/Battle'}><Button className={'m-5 border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-blue-500 hover:bg-blue-300 focus:translate-y-1'} type={'Enter Battle'}/></NavLink>
-
+        {authCtx.token && <Button className={'m-5 border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-blue-500 hover:bg-blue-300 focus:translate-y-1'} onClick={() => setDisplayLoad(true)} type={'Load'}/>}
+        {displayLoad && <LoadGameModal/>}
         
         
   

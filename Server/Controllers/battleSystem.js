@@ -14,6 +14,7 @@ module.exports = {
                 console.log(newDef)
                 
                 let damage = req.body.atk - newDef
+
                 if(damage < 0){
                     damage = 0
                 }
@@ -46,6 +47,8 @@ module.exports = {
             let healing = Math.floor(pMaxHp / 2)
             if(healing + pHp > pMaxHp){
                 healing = pMaxHp
+            }else {
+                healing = healing +pHp
             }
             return res.status(200).send(healing.toString())
         }else if(itemUsed[0].name === 'Megalixer'){

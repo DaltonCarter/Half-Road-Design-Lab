@@ -200,3 +200,51 @@ tr{
   right: 4%;
 }
 
+.loot-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 255, .9);
+  border: 5px double black;
+  border-radius: 5px;
+  
+}
+.loot-modal {
+  position:fixed;
+  top: 5vh;
+  left: 4%;
+  height: 75%;
+  width: 75%;
+  z-index: 100;
+ 
+}
+
+.gameover-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 255, .9);
+  border: 5px double black;
+  border-radius: 5px;
+  
+}
+.gameover-modal {
+  position:fixed;
+  top: 5vh;
+  left: 4%;
+  height: 75%;
+  width: 75%;
+  z-index: 100;
+ 
+}
+
+.Battle-Background{
+  height: 80vh;
+  background-image: url(/src/Assets/Backgrounds/vecteezy_ancient-roman-arena-for-gladiators-fight_15370321.jpg);
+}

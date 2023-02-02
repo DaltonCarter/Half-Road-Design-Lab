@@ -4,7 +4,9 @@ import InventoryContext from '../Store/InventoryContext'
 import InventoryModal from './InventoryModal'
 import StatsModal from './StatsModal'
 import EquipModal from './EquipModal'
-import {NavLink} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
+import AuthContext from '../Store/authContext'
+import SaveGameModal from './SaveGameModal'
 
 
 const Backdrop = () => {
@@ -12,6 +14,8 @@ const Backdrop = () => {
 }
 
 const ModalOverlay = ({inventory, handleSecondModal}) => {
+
+    const authCtx = useContext(AuthContext)
     return(
         <div className='modal'>
             <h1 className='menu-title'>Main Menu:</h1>
@@ -19,7 +23,8 @@ const ModalOverlay = ({inventory, handleSecondModal}) => {
         <Button className="menu-button" onClick={() => handleSecondModal('Inventory')} type='Inventory'/>
         <Button className="menu-button" onClick={() => handleSecondModal('Stats')} type='Stats'/>
         <Button className="menu-button" onClick={() => handleSecondModal('Equip')} type='Equip'/>
-        <NavLink to={'/'}><Button className="menu-button" type={'Quit Game'}/></NavLink>
+        {authCtx.token && <Button className="menu-button" onClick={() => handleSecondModal('Save')} type={'Save Game'}/>}
+        {authCtx.token ? <NavLink to={'/'}><Button className="menu-button" onClick={() => authCtx.logout()} type={'Logout'}/></NavLink> : <NavLink to={'/'}><Button className="menu-button" type={'Quit Game'}/></NavLink>}
         </div>
         <p className='wallet'>Xal: {inventory.wallet}</p>
         </div>
@@ -33,22 +38,32 @@ const MenuModal = () => {
     const [displayInventoryModal, setDisplayInventoryModal] = useState(false)
     const [displayStatsModal, setDisplayStatsModal] = useState(false)
     const [displayEquipModal, setDisplayEquipModal] = useState(false)
+    const [displaySaveModal, setDisplaySaveModal] = useState(false)
 
     const handleSecondModal = (type) => {
         if(type === 'Inventory'){
             setDisplayEquipModal(false)
             setDisplayStatsModal(false)
+            setDisplaySaveModal(false)
             setDisplayInventoryModal(!displayInventoryModal)
             
         }else if (type === 'Stats'){
             setDisplayEquipModal(false)
             setDisplayInventoryModal(false)
+            setDisplaySaveModal(false)
             setDisplayStatsModal(!displayStatsModal)
 
         }else if (type === 'Equip'){
             setDisplayInventoryModal(false)
             setDisplayStatsModal(false)
+            setDisplaySaveModal(false)
             setDisplayEquipModal(!displayEquipModal)
+
+        } else if (type === 'Save'){
+            setDisplayInventoryModal(false)
+            setDisplayStatsModal(false)
+            setDisplayEquipModal(false)
+            setDisplaySaveModal(!displaySaveModal)
         }
     }
 
@@ -59,6 +74,7 @@ const MenuModal = () => {
     {displayInventoryModal && <InventoryModal handleSecondModal={handleSecondModal}/>}
     {displayStatsModal && <StatsModal handleSecondModal={handleSecondModal}/>}
     {displayEquipModal && <EquipModal handleSecondModal={handleSecondModal}/>}
+    {displaySaveModal && <SaveGameModal handleSecondModal={handleSecondModal}/>}
      </section>
   )
 }

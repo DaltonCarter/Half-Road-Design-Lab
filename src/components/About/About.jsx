@@ -17,6 +17,8 @@ const About = () => {
 
             <img alt='JavaScript' className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
           
+            <img alt='CSS3' className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" />
+
             <img alt='Tailwind Css' className='w-24 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" />
 
             <img alt='Express.js' className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" />
@@ -62,7 +64,7 @@ const About = () => {
                 <br/>
             - Spells, Skills, Status Effects and Magic Stats
                 <br/>
-            - World Expansion, actual fields and dungeons, and sprite based navigation.
+            - World Expansion, mission based fields and dungeons.
                 <br/>
             - A Plot, actual story content.
                 <br/>

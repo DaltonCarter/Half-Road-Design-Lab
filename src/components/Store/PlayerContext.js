@@ -24,7 +24,11 @@ const PlayerContext = createContext({
     setAccessorySlot: () => {},
     setCurrentExp: () => {},
     fullHeal: () => {},
-    calculateEquipmentValue: () => {}
+    calculateEquipmentValue: () => {},
+    setCharacter: () => {},
+    setLevel: () => {},
+    setCurrentExp: () => {},
+    setNextLevel: () => {},
     
 
 })
@@ -185,7 +189,11 @@ let contextValue = {
    setAccessorySlot,
    setCurrentExp,
    fullHeal,
-   calculateEquipmentValue
+   calculateEquipmentValue,
+   setCharacter,
+   setLevel,
+   setCurrentExp,
+   setNextLevel
    
 
 }

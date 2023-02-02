@@ -21,8 +21,30 @@
         "desc": "A standard foot soldiers sword."
         },
 
+        {
+            "id": 3,
+            "type": "Shield",
+            "name": "Buckler",
+            "defPwr": 3,
+            "price": 200,
+            "sellPrice": 100,
+            "amount": 0,
+            "desc": "A small easy to use shield."
+        },
+
+        {
+            "id": 4,
+            "type": "Helm",
+            "name": "Leather Helmet",
+            "defPwr": 2,
+            "price": 100,
+            "sellPrice": 50,
+            "amount": 0,
+            "desc": "A light helmet made from tanned leather."
+        },
+
     {
-        "id": 3,
+        "id": 5,
         "type": "Armor",
         "name": "Leather Armor",
         "defPwr": 5,
@@ -30,5 +52,19 @@
         "sellPrice": 100,
         "amount": 0,
         "desc": "A suit of light armor made from tanned leather."
+    },
+
+    {
+        "id": 6,
+        "type": "Accessory",
+        "name": "Charm",
+        "hp": 10,
+        "atkPwr": 2,
+        "defPwr": 0,
+        "agi": 2,
+        "price": 200,
+        "sellPrice": 100,
+        "amount": 0,
+        "desc": "A strange necklace that supposedly helps protect the wearer."
     }
 ]

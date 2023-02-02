@@ -5,6 +5,7 @@
     "desc": "Heals the user for 20Hp.",
     "price": 50,
     "sellPrice": 25,
+    "amounthealed": 20,
     "amount": 0
 },
 
@@ -14,6 +15,7 @@
     "desc": "Heals the user for 60Hp.",
     "price": 200,
     "sellPrice": 100,
+    "amounthealed": 60,
     "amount": 0
 },
 
@@ -23,6 +25,7 @@
     "desc": "Heals the user for 120Hp.",
     "price": 500,
     "sellPrice": 250,
+    "amounthealed": 120,
     "amount": 0
 },
 
@@ -32,6 +35,7 @@
     "desc": "Restores 50% hp for the user.",
     "price": 1000,
     "sellPrice": 500,
+    "amounthealed": 50,
     "amount": 0
 },
 
@@ -41,6 +45,7 @@
     "desc": "Fully restores Hp for the user.",
     "price": 2000,
     "sellPrice": 2500,
+    "amounthealed": 100,
     "amount": 0
 }
 ]

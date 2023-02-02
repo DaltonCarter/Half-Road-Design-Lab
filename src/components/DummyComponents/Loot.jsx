@@ -28,7 +28,7 @@ function Loot({ displayHandler }) {
   };
 
   const randomEquipment = () => {
-    const equipDrop = Math.floor(Math.random() * 3);
+    const equipDrop = Math.floor(Math.random() * 6);
     console.log(equipDrop);
     if (equipDrop > 0) {
       const equip = Equipment[Math.floor(Math.random() * Equipment.length)];
@@ -41,7 +41,12 @@ function Loot({ displayHandler }) {
     }
   };
 
-  const randomKeyItem = () => {};
+  const randomKeyItem = () => {
+    let drop = KeyItems
+    let keyItem = drop[0]
+    console.log(keyItem)
+    inventory.handleAddKeyItem(keyItem)
+  };
 
   const gainExp = () => {
     console.log(playerCtx.currentExp);
@@ -75,7 +80,9 @@ function Loot({ displayHandler }) {
         onClick={() => randomEquipment()}
         type={"Equipment Button"}
       />
-      {/* <Button onClick={() => handleAddKeyItem(keyItem)} type={'Equipment Button'}/> */}
+      <Button className={
+          "m-5 border-8 border-double border-gray-800 bg-clip-padding w-40 h-11 rounded-lg shadow-xl bg-blue-500 hover:bg-blue-300 focus:translate-y-1"
+        } onClick={() => randomKeyItem()} type={'Key-Item Button'}/>
       <Button
         className={
           "m-5 border-8 border-double border-gray-800 bg-clip-padding w-40 h-11 rounded-lg shadow-xl bg-blue-500 hover:bg-blue-300 focus:translate-y-1"

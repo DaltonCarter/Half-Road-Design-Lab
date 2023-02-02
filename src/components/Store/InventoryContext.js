@@ -9,7 +9,10 @@ const InventoryContext = createContext({
     handleAddEquipment: () => {},
     handleAddConsumable: () => {},
     handleAddKeyItem: () => {},
-    setPlayerEquipment: () => {}
+    setPlayerEquipment: () => {},
+    setPlayerItems: () => {},
+    setPlayerKeyItems: () => {},
+    setWallet: () => {}
 
 })
 
@@ -165,7 +168,11 @@ export const InventoryContextProvider = (props) => {
         handleAddEquipment,
         handleAddKeyItem,
         handleRemoveItem,
-        handleRemoveEquip 
+        handleRemoveEquip,
+        setPlayerEquipment,
+        setPlayerItems,
+        setPlayerKeyItems,
+        setWallet 
 
     }
 
