@@ -4,36 +4,40 @@ import {NavLink} from 'react-router-dom'
 
 const About = () => {
   return (
-    <div className='flex flex-col justify-evenly items-center m-5'>
-        <h1 className='text-4xl font-extrabold m-5'>About This Game:</h1>
+    <div className='flex flex-col justify-evenly items-center  parchment-bg bg-cover'>
+        
 
-        <h2 className='text-3xl font-bold'>Technologies Used:</h2>
+        <h2 className='border-8 border-double border-black p-2 bg-clip-padding bg-yellow-100  text-4xl m-5 font-bold'>Technologies Used:</h2>
 
-            <div className='flex justify-around items-center'>
+            <div className='border-8 border-double border-black bg-clip-padding bg-yellow-100 flex justify-around items-center'>
 
             <img alt='React.js' className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
           
-            <img alt='Node.js' className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" />
+            <img alt='Node.js' className='w-32 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" />
 
             <img alt='JavaScript' className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
           
             <img alt='CSS3' className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" />
 
-            <img alt='Tailwind Css' className='w-24 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" />
+            <img alt='Tailwind Css' className='w-40 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" />
 
-            <img alt='Express.js' className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" />
+            <img alt='Express.js' className='w-36 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" />
 
+            <img alt='Sequelize'  className='w-36 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original-wordmark.svg" />
+          
+            <img alt='Postgres SQL'  className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg" />
+          
             <img alt='Adobe Photoshop' className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg" />
           
           
             </div>
-        
-        <h3 className='text-2xl font-bold m-5'>First and foremost this game is a Work in progress. 
+            <h1 className='text-4xl font-extrabold m-5'>About This Game:</h1>
+        <h3 className='border-8 border-double border-black text-2xl p-2 font-bold m-5'>First and foremost this game is a Work in progress. 
             The game as it appears currently is it's most basic 
             incarnation.
             </h3>
             <br/>
-            <p className='italic text-lg font-medium m-5 text-center'>
+            <p className='italic text-xl font-semibold m-5 text-center'>
             Current Features:
             <br/>
             - Single Screen "Hub" area, where player can access the Store, initiate Combat, rest, 
@@ -52,11 +56,14 @@ const About = () => {
             - Front View Battle System: Features a battle background, as well as static enemy sprite.
             User display will show name, Level, and HP/max Hp, user input limited to: Fight, Defend, Item, and Flee for now.
             <br/> 
+            - Players can create a Login which will allow them to save and load their progress. Registering only requires
+            a username, NO DUPLICATES, and a password. <br/>Load feature will display up to 6 of the users most recent saves,
+            which they can load or delete. ATTENTION: Currently only 1 run is permitted per user. If you wish to start over,
+            you will need to delete all of your current save files.
+            <br/> 
             </p>
-            <p className='italic text-lg font-medium m-5 text-center'>
+            <p className='italic text-xl font-semibold m-5 text-center'>
             Planned Features:
-                <br/>
-            - Save Game feature, bound to a registered login.
                 <br/>
             - Animated Enemy sprites, attack animations
                 <br/>
@@ -75,12 +82,12 @@ const About = () => {
             - Expanded Items, Equipment, and Key-Items
                 <br/>
             </p>
-            <h3 className='text-2xl font-bold m-5'>NOTE:
+            <h3 className='border-8 border-double border-black text-2xl font-bold p-2 m-5 text-red-800'>NOTE:
                 The Planned Features list does not represent the order in which these features might appear. Actual implementation
                 will be dependant on how easily I can figure out, modify, and make the code.</h3>
                 
                 
-                <NavLink to='/'><Button className={'border-8 border-double border-yellow-400 w-28 h-11 rounded-lg shadow-xl hover:bg-yellow-200 focus:translate-y-1'} type={'Return'}/></NavLink>
+                <NavLink to='/'><Button className={'border-8 border-double border-black w-28 h-11 rounded-lg shadow-xl bg-white hover:bg-yellow-200 focus:translate-y-1'} type={'Return'}/></NavLink>
     </div>
   )
 }

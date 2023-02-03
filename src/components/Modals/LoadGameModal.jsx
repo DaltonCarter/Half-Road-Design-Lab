@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import axios from 'axios'
 import Equipment from '../../Databases/Equipment.json'
+import KeyItems from '../../Databases/Key-Items.json'
 import PlayerContext from '../Store/PlayerContext'
 import InventoryContext from '../Store/InventoryContext'
 import AuthContext from '../Store/authContext'
@@ -8,11 +9,14 @@ import Button from '../Button'
 import { useNavigate } from 'react-router-dom'
 import SaveFileDisplay from './SaveFileDisplay'
 
+
+
+// BEGIN LOAD GAME FUNCTIONALITY
 const Backdrop = () => {
-    return <div className='loot-backdrop'/>
+    return <div className='loot-backdrop parchment-bg bg-cover flex flex-col justify-center items-center'/>
   }
   
-  const ModalOverlay = ({saveFiles}) => {
+  const ModalOverlay = ({saveFiles, setDisplayLoad, setGetFiles}) => {
     const navigate = useNavigate()
     const playerCtx = useContext(PlayerContext)
     const inventory = useContext(InventoryContext)
@@ -70,7 +74,7 @@ const Backdrop = () => {
       let foundAccessory = Equipment.filter((ac) => ac.id === file.accessory)
       let accessory = foundAccessory[0]
       playerCtx.setAccessorySlot(accessory)
-      navigate('/')
+      navigate('/Game')
 
     }
 
@@ -78,16 +82,47 @@ const Backdrop = () => {
         <div className='loot-modal'>
           {saveFiles.map((save) => {
             return (
-             <SaveFileDisplay save={save} setLoadId={setLoadId}/>
+             <SaveFileDisplay save={save} setLoadId={setLoadId} setGetFiles={setGetFiles}/>
               
             )
           })} 
+          <Button onClick={() => setDisplayLoad(false)} type={'Close'}/>
         </div>
     )
   }
 
+// END OF LOAD GAME FUNCTIONALITY
 
-const LoadGameModal = () => {
+// BEGIN FUNCTIONALITY FOR NEW USER NEW GAME
+const NewGameOverlay = () => {
+  const Player = useContext(PlayerContext)
+    const Inventory = useContext(InventoryContext)
+    const navigate = useNavigate()
+    const Character = Player.Character
+    const [name, setName] = useState('Arahc')
+    const keyItems = KeyItems
+  
+
+
+    const handleCharacter = () => {
+    Character.name = name
+    let newItem = keyItems[0]
+    Inventory.handleAddKeyItem(newItem)
+    navigate('/Intro')
+    }
+
+  return(
+    <div className='loot-modal flex flex-col justify-center items-center'>
+    <h2 className='m-5 text-xl font-bold'>Please name your Character!</h2>
+            <input className='border-8 border-double border-black bg-clip-padding p-2 m-5 text-xl italic w-72 h-14' defaultValue={name} placeholder={'name your Character'} onChange={(e) => setName(e.target.value)}/>
+            <Button className='m-5 border-8 border-double border-black w-60 h-14 bg-clip-padding rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1' onClick={() => handleCharacter()} type={'Confim and Begin game!'}/>
+            </div>
+  )
+}
+
+// END OF NEW GAME FOR NEW USER FUNCTIONALITY
+
+const LoadGameModal = ({setDisplayLoad}) => {
   const authCtx = useContext(AuthContext)
   const [saveFiles, setSaveFiles] =useState()
   const [getFiles, setGetFiles] = useState(true)
@@ -119,7 +154,8 @@ const LoadGameModal = () => {
   return (
     <div>
         <Backdrop/>
-        {saveFiles ? <ModalOverlay saveFiles={saveFiles}/> : <p>Loading Savve Files...</p>}
+        {saveFiles === {} ? <ModalOverlay setGetFiles={setGetFiles} saveFiles={saveFiles} setDisplayLoad={setDisplayLoad}/> : <NewGameOverlay /> }
+        
     </div>
   )
 }

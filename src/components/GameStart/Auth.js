@@ -25,7 +25,7 @@ const Auth = () => {
                 console.log('AFTER AUTH', data)
                 console.log(authCtx)
                 authCtx.login(data.token, data.exp, data.userId)
-                navigate('/Game')
+                navigate('/Start')
 
                 
             })
@@ -40,25 +40,26 @@ const Auth = () => {
    }
  
    return (
-       <main>
-           <h1>Welcome!</h1>
-           <form className='form auth-form' onSubmit={(e) => submitHandler(e)}>
+       <main className='flex flex-col w-full justify-center items-center parchment-bg bg-cover'>
+           <h1 className=' border-8 border-double border-black text-6xl p-5 m-5 font-extrabold italic underline'>Welcome to the Colosseum!</h1>
+           <h2 className='text-3xl m-5 font-bold italic'> Please pick a unique Username, and a Password.</h2>
+           <form className='flex flex-col items-center' onSubmit={(e) => submitHandler(e)}>
                <input
-                   className='form-input'
+                   className='border-8 border-double border-black bg-clip-padding  m-5 text-xl italic w-60 h-14'
                    type='text' 
                    placeholder='Username'
                    onChange={(e) => setUsername(e.target.value)}/>
                <input
-                   className='form-input'
-                   type='text' 
+                   className='border-8 border-double border-black bg-clip-padding  m-5 text-xl italic w-60 h-14'
+                   type='password' 
                    placeholder='Password'
                    onChange={(e) => setPassword(e.target.value)}/>
-               <button className='form-btn'>
+               <button className='m-5 border-8 border-double border-black w-36 h-14 bg-clip-padding rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1'>
                    {register ? 'Sign Up' : 'Login'}
                </button>
            </form>
-           <button className='form-btn' onClick={() => setRegister(!register)}>Need to {register ? 'Login' : 'Sign Up' }?</button>
-           <Button onClick={() => navigate('/')} type={'Cancel'}/>
+           <button className='m-5 border-8 border-double border-black w-36 h-14 bg-clip-padding rounded-lg shadow-xl bg-blue-500 hover:bg-blue-300 focus:translate-y-1' onClick={() => setRegister(!register)}>Need to {register ? 'Login' : 'Sign Up' }?</button>
+           <Button className='m-5 border-8 border-double border-black w-36 h-14 bg-clip-padding rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1' onClick={() => navigate('/')} type={'Cancel'}/>
        </main>
    )
 }

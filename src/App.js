@@ -5,8 +5,10 @@ import TitlePage from './components/TitlePage/TitlePage';
 import GameScreen from './components/GameScreen/GameScreen';
 import About from './components/About/About';
 import BattleScene from './components/BattleScene/BattleScene';
-import AuthContext from "./components/Store/authContext"
 import Auth from './components/GameStart/Auth';
+import GameStart from './components/GameStart/GameStart';
+import Introduction from './components/GameStart/Introduction';
+import Credits from './components/Credits/Credits';
 
 function App() {
   const [initialize, setInitialize] = useState(true)
@@ -18,6 +20,9 @@ function App() {
         <Route path='/Auth' element={<Auth />}/>
         <Route path='/Game' element={<GameScreen />}/>
         <Route path='/About' element={<About />}/>
+        <Route path='/Start' element={<GameStart />}/>      
+        <Route path='/Intro' element={<Introduction />}/>      
+        <Route path='/Credits' element={<Credits />}/>      
         <Route path='/Battle' element={<BattleScene initialize={initialize} setInitialize={setInitialize}/>}/>      
       </Routes>
     </div>

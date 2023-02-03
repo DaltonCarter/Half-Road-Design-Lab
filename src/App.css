@@ -248,3 +248,8 @@ tr{
   height: 80vh;
   background-image: url(/src/Assets/Backgrounds/vecteezy_ancient-roman-arena-for-gladiators-fight_15370321.jpg);
 }
+
+.parchment-bg{
+  background-image: url(/src/Assets/Backgrounds/parchment-paper.png);
+  height: 100vh;
+}
