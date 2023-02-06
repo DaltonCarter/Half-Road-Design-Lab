@@ -22,8 +22,8 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 25%;
-  height: 75vh;
+  width: 40%;
+  height: 100vh;
   z-index: 10;
   background-color: rgba(0, 0, 255, 0.75);
   border: 11px double black;
@@ -49,8 +49,8 @@
   position: fixed;
   top: 0vh;
   right: 5vw; 
-  height: 25%;
-  width: 15%;
+  height: 90%;
+  width: 30%;
   z-index: 100;
   text-align: center;
   
@@ -60,7 +60,7 @@
   position:fixed;
   top: 5vh;
   left: 4%;
-  height: 50%;
+  height: 90%;
   width: 50%;
   z-index: 100;
  
@@ -68,7 +68,7 @@
 
 .menu-selections {
   
-  height: 50vh;
+  height: 75vh;
      display: flex;
      flex-direction: column;
      justify-content: space-evenly;

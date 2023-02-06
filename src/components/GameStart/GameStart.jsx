@@ -33,6 +33,8 @@ const GameStart = () => {
           </p>
           
         </div>}
+        {authCtx.token && <h1 className='m-5 text-red-600 text-center text-3xl font-extrabold italic underline'> DO NOT REFRESH YOUR TAB! This will reset ALL of your current Data.<br/> If Your page refreshes or you have to refresh, you will need to reload your last Save.<br/>
+        REMEMBER S.E.S.O Save Early, Save Often!</h1>}
         <h1 className='m-1 text-xl font-extrabold italic underline'>CHARACTER GENERATION:</h1>
             <h2 className='m-5 text-xl font-bold'>Please name your Character!</h2>
             <input className='border-8 border-double border-black bg-clip-padding p-2 m-5 text-xl italic w-72 h-14' defaultValue={name} placeholder={'name your Character'} onChange={(e) => setName(e.target.value)}/>

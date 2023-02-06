@@ -65,10 +65,12 @@ const BattleScene = ({initialize, setInitialize}) => {
         let selection = Math.floor(Math.random() * 10)
         let {name, img} = Enemies[selection]
         console.log(name, img)
-        let hp = 35 + Math.floor(Math.random() * 100)
-        let atk = 19 + Math.floor(Math.random() * 15)
-        let def = 8 + Math.floor(Math.random() * 5)
+        if(Player.level === 1){
+        let hp = 50 + Math.floor(Math.random() * 50)
+        let atk = 22 + Math.floor(Math.random() * 15)
+        let def = 11 
         let agi = 8 + Math.floor(Math.random() * 10)
+    
 
         let opponent = {
             name: name,
@@ -79,8 +81,41 @@ const BattleScene = ({initialize, setInitialize}) => {
             def: def,
             agi: agi
         }
-
         setEnemy(opponent)
+    }else if (Player.level > 1 && Player.level < 6){
+        let hp = 70 + Math.floor(Math.random() * 100)
+        let atk = 26 + Math.floor(Math.random() * 17)
+        let def = 15 + Math.floor(Math.random() * 8)
+        let agi = 12 + Math.floor(Math.random() * 20)
+
+        let opponent = {
+            name: name,
+            img: img,
+            hp: hp,
+            maxHp: hp,
+            atk: atk,
+            def: def,
+            agi: agi
+        }
+        setEnemy(opponent)
+    } else if (Player.level > 5 && Player.level < 11){
+        let hp = 100 + Math.floor(Math.random() * 120)
+        let atk = 30 + Math.floor(Math.random() * 45)
+        let def = 20 + Math.floor(Math.random() * 45)
+        let agi = 25 + Math.floor(Math.random() * 50)
+
+        let opponent = {
+            name: name,
+            img: img,
+            hp: hp,
+            maxHp: hp,
+            atk: atk,
+            def: def,
+            agi: agi
+        }
+        setEnemy(opponent)
+    }
+        
     }
 
     const determineInitiative = (pAgi, eAgi) => {
@@ -117,10 +152,10 @@ const BattleScene = ({initialize, setInitialize}) => {
                 if(enemy.hp === 0){
                     setVictory(true)
                 }else {
-                    let enemyActions = [1, 2]
+                    let enemyActions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                     const action = Math.floor(Math.random() * enemyActions.length)
                     console.log(action)
-                    if(action === 0) {
+                    if(action < 8) {
                         let atk = enemy.atk
                         let def = pDef
                         let defending = playerDefending

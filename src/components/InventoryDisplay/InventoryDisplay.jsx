@@ -7,7 +7,7 @@ const InventoryDisplay = ({type}) => {
 
   return (
   <div>
-{type === 'Items' && <div className='flex items-center flex-col'>
+{type === 'Items' && <div className='flex items-center flex-col '>
 <h2 className='border-8 border-double border-black m-5 text-3xl underline p-3 bg-green-200 font-semibold'>Items:</h2>
 <div className='inventory-display-container'>
 {inventory.playerItems.map((item) => (

@@ -14,13 +14,13 @@ const IntroductionOverlay = ({handleClick}) => {
             <p className='text-2xl m-5 font-semibold italic'>
                 You hail from the Vernath Empire and are 'x'th child of a minor noble house.
                 Meaning you don't get to rely on an inheritance like your older sibling(s).
-                So you decided to take your love for combat and try to forge a Name
+                <br/>So you decided to take your love for combat and try to forge a Name
                 and fortune all your own.
             </p>
             <p className='text-2xl m-5 font-semibold italic'>
                 Your sharp mind, and raw talent in battle quickly brought
                 you prominence in the Imperial Army. Ever hungry for the chance to
-                improve, and test yourself you volunteered to be the Imperial representative
+                improve, and test yourself you volunteered<br/> to be the Imperial representative
                 at the Khadran Games. The Emperor, and Empress both gave you their blessings,
                 and the promise of great rewards should you become Champion.
             </p>

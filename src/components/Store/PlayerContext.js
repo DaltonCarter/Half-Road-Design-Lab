@@ -140,7 +140,7 @@ const checkExp = () => {
 
 const fullHeal = () => {
     console.log('begin heal') 
-    let player = {...Character, hp: Character.maxHP}
+    let player = {...Character, hp: totalHp}
     console.log('Should be healed')
     setCharacter(player)
 }

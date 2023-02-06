@@ -28,7 +28,7 @@ function Loot({ displayHandler }) {
   };
 
   const randomEquipment = () => {
-    const equipDrop = Math.floor(Math.random() * 6);
+    const equipDrop = Math.floor(Math.random() * 25);
     console.log(equipDrop);
     if (equipDrop > 0) {
       const equip = Equipment[Math.floor(Math.random() * Equipment.length)];

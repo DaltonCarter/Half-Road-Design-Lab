@@ -42,9 +42,9 @@ const ShopDisplay = ({
 };
 
   return (
-    <div className="store-container items-center flex-col">
+    <div className="store-container items-center flex-col ">
       <h2 className="text-3xl font-bold">Stock:</h2>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap" >
       {type === "Buy Items" &&
         storeItems.map((item) => (
           <div className="m-5 p-3 border-8 border-double border-black bg-green-200 rounded-xl" key={item.id}>

@@ -11,14 +11,18 @@ const ModalOverlay = ({ handleSecondModal, Equipment, weaponSlot, shieldSlot, he
     return(
         <div className='secondary-modal flex flex-col items-center'>
             <h1 className='menu-title m-5 p-3 bg-gray-300 border-8 border-double border-black'>Player Equipment:</h1>
-            <div className="equip-scene flex flex-col">
+            <div className="equip-scene flex  flex-wrap">
+
+            <div className="flex flex-col m-3">
             <label className="m-1 text-2xl font-bold border-4 p-1 border-solid border-black bg-red-300 text-center" for='Weapon'>Weapon: </label>
-            <select className="mb-2 border-4 border-solid border-black" name='weapon' id="Weapon" onChange={(e) => EquipWeaponHandler(e.target.value)}>
+            <select className="mb-2 p-2 border-4 border-solid border-black" name='weapon' id="Weapon" onChange={(e) => EquipWeaponHandler(e.target.value)}>
             <option value="" disabled selected>Select an Option</option>
                 {Equipment.filter((w) => w.type === 'Weapon').map((w) => (
                     <option value={w.id}>{w.name}</option>
                 ))}
             </select>
+            </div>
+            <div className="flex flex-col m-3">
             <label className="m-1 text-2xl font-bold border-4 p-1 border-solid border-black bg-red-300 text-center" for='Shield'>Shield: </label>
              <select className="mb-2 p-2 border-4 border-solid border-black"  name='shield' id="Shield" onChange={(e) => EquipShieldHandler(e.target.value)}>
             <option value="" disabled selected>Select an Option</option>
@@ -26,6 +30,8 @@ const ModalOverlay = ({ handleSecondModal, Equipment, weaponSlot, shieldSlot, he
                     <option value={w.id}>{w.name}</option>
                 ))}
             </select>
+            </div>
+            <div className="flex flex-col m-3">
             <label className="m-1 text-2xl font-bold border-4 p-1 border-solid border-black bg-red-300 text-center" for='Helm'>Helmet: </label>
              <select className="mb-2 p-2 border-4 border-solid border-black"  name='helm' id="Helm" onChange={(e) => EquipHelmHandler(e.target.value)}>
             <option value="" disabled selected>Select an Option</option>
@@ -33,6 +39,8 @@ const ModalOverlay = ({ handleSecondModal, Equipment, weaponSlot, shieldSlot, he
                     <option value={w.id}>{w.name}</option>
                 ))}
             </select>
+            </div>
+             <div className="flex flex-col m-3">       
             <label className="m-1 text-2xl font-bold border-4 p-1 border-solid border-black bg-red-300 text-center" for='Armor'>Armor: </label>
             <select className="mb-2 p-2 border-4 border-solid border-black"  name='Armor' id="Armor" onChange={(e) => EquipArmorHandler(e.target.value)}>
             <option value="" disabled selected>Select an Option</option>
@@ -40,6 +48,8 @@ const ModalOverlay = ({ handleSecondModal, Equipment, weaponSlot, shieldSlot, he
                     <option value={w.id}>{w.name}</option>
                 ))}
             </select>
+            </div>
+            <div className="flex flex-col m-3">       
             <label className="m-1 text-2xl font-bold border-4 p-1 border-solid border-black bg-red-300 text-center" for='Accessory'>Accessory: </label>
             <select className="mb-2 p-2 border-4 border-solid border-black"  name='Accessory' id="Accessory" onChange={(e) => EquipAccessoryHandler(e.target.value)}>
             <option value="" disabled selected>Select an Option</option>
@@ -47,6 +57,8 @@ const ModalOverlay = ({ handleSecondModal, Equipment, weaponSlot, shieldSlot, he
                     <option value={w.id}>{w.name}</option>
                 ))}
             </select>
+            </div>
+
             </div>
             <h1 className='menu-title m-5 p-3 bg-gray-300 border-8 border-double border-black'>Current Equipment:</h1>
             <div className="current-equip border-8 border-black border-double bg-blue-200 p-3">

@@ -14,7 +14,7 @@ const Backdrop = () => {
 }
 
 const ModalOverlay = ({inventory, handleSecondModal, menuToggle}) => {
-
+   const navigate = useNavigate()
     const authCtx = useContext(AuthContext)
     return(
         <div className='modal'>
@@ -24,6 +24,7 @@ const ModalOverlay = ({inventory, handleSecondModal, menuToggle}) => {
         <Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => handleSecondModal('Stats')} type='Stats'/>
         <Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => handleSecondModal('Equip')} type='Equip'/>
         {authCtx.token && <Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => handleSecondModal('Save')} type={'Save Game'}/>}
+        {authCtx.token && <Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => navigate('/Load')} type={'Load Game'}/>}
         <Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => menuToggle()} type={'Close Menu'}/>
         {authCtx.token ? <NavLink to={'/'}><Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => authCtx.logout()} type={'Logout'}/></NavLink> : <NavLink to={'/'}><Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => setTimeout(() => {window.location.reload()}, 500)} type={'Quit Game'}/></NavLink>}
         </div>

@@ -10,7 +10,7 @@ const Backdrop = () => {
 
 const ModalOverlay = ({ handleSecondModal, displayHandler, displayEquipment, displayItems, displayKeyItems}) => {
     return(
-        <div className='secondary-modal'>
+        <div className='secondary-modal  overflow-y-scroll'>
             <h1 className='menu-title'>Inventory:</h1>
             <div className='selection-container'>
             <h1 className='type'>Type:</h1> 
@@ -19,7 +19,7 @@ const ModalOverlay = ({ handleSecondModal, displayHandler, displayEquipment, dis
             <Button className={'inventory-button bg-pink-500 border-8 border-double border-black hover:bg-pink-300 focus:translate-y-1'} onClick={() => displayHandler('Key Items')} type='Key Items'/>
             <Button className={'inventory-button bg-red-500 border-8 border-double border-black hover:bg-red-300 focus:translate-y-1'} onClick={() => handleSecondModal('Inventory')} type='Close'/>
             </div>
-            <div>
+            <div >
             {displayItems && <InventoryDisplay type={'Items'}/>}
             {displayEquipment && <InventoryDisplay type={'Equip'}/>}    
             {displayKeyItems && <InventoryDisplay type={'Key Items'}/>}

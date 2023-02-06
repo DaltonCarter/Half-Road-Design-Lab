@@ -62,7 +62,7 @@ function Loot({setInitialize}) {
   };
 
   const randomEquipment = () => {
-    const equipDrop = Math.floor(Math.random() * 6);
+    const equipDrop = Math.floor(Math.random() * 25);
     console.log(equipDrop);
     if (equipDrop > 0) {
       const equip = Equipment[Math.floor(Math.random() * Equipment.length)];
@@ -83,7 +83,7 @@ function Loot({setInitialize}) {
     let newXp = currentXp + randomXp;
     console.log(newXp);
     playerCtx.setCurrentExp(newXp);
-    setExp(newXp)
+    setExp(randomXp)
   };
 
 useEffect(() => {

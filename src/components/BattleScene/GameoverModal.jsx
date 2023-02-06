@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import PlayerContext from '../Store/PlayerContext'
 import Button from '../Button'
 import { useNavigate } from 'react-router-dom'
+import AuthContext from '../Store/authContext'
 
 const Backdrop = () => {
     return <div className='gameover-backdrop gameover bg-cover bg-repeat-round'/>
@@ -21,11 +22,16 @@ const ModalOverlay = ({exitHandler}) => {
 const GameoverModal = ({setInitialize}) => {  
     const player = useContext(PlayerContext)
     const navigate = useNavigate() 
+    const authCtx = useContext(AuthContext)
     const exitHandler = () => {
         player.Character.hp = player.Character.maxHP
+        if(authCtx.token){
+            navigate('/Load')
+        }else {
         setInitialize(true)
         navigate('/')
         setTimeout(() => {window.location.reload()}, 500)
+    }
     }
 
   return (

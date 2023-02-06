@@ -206,7 +206,7 @@ function ShopScene({ displayShop }) {
         )}
       </div>
 
-      <div className="inventory-display">
+      <div className="inventory-display overflow-y-scroll">
       
         {buyItems && <ShopDisplay exitHandler={exitHandler} storeItems={storeItems} type={'Buy Items'} handleItemPurchase={handleItemPurchase}/>}
         {buyEquipment && <ShopDisplay exitHandler={exitHandler} storeEquipment={storeEquipment} type={'Buy Equipment'} handleEquipmentPurchase={handleEquipmentPurchase}/>}
