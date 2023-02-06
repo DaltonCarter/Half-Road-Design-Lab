@@ -1,34 +1,63 @@
 [
     {
         "id": 1,
-        "name": "Slime",
-        "img": "/Assets/Enemies/Green-Slime.png"
+        "name": "Doppleganger Slime",
+        "img": "/Assets/Enemies/Boss-Doppelganger-Slime.png"
+        
     
 },
 {
     "id": 2,
-    "name": "Goblin",
-    "img": "/Assets/Enemies/Goblin.png"
+    "name": "Warrior Skoll",
+    "img": "/Assets/Enemies/Boss-God-Warrior-Skoll.png"
 
 },
 {
     "id": 3,
-    "name": "Wolf",
-    "img": "/Assets/Enemies/Wolf.png"
+    "name": "Black Wolf",
+    "img": "/Assets/Enemies/Mountain-Black-Wolf.png"
 
 },
 {
     "id": 4,
-    "name": "Chaos",
-    "img": "/Assets/Enemies/Chaos.png"
+    "name": "Rigel",
+    "img": "/Assets/Enemies/Werewolf-Rigel.png"
 
 },
 {
     "id": 5,
-    "name": "Bahamut",
-    "img": "/Assets/Enemies/dragon-sprite-png-8.png"
+    "name": "Knight Dalton",
+    "img": "/Assets/Enemies/Legendary-Knight-Dalton.png"
+
+},
+{
+    "id": 6,
+    "name": "Knight Serat",
+    "img": "/Assets/Enemies/Legendary-Knight-Serat.png"
+
+},
+{
+    "id": 7,
+    "name": "E'tervise",
+    "img": "/Assets/Enemies/Boss-Dragon-Huanglong.png"
+
+},
+{
+    "id": 8,
+    "name": "Hades",
+    "img": "/Assets/Enemies/Boss-Hades.png"
+
+},
+{
+    "id": 9,
+    "name": "Skull Knight Xoer",
+    "img": "/Assets/Enemies/Skull-Knight-Xoer.png"
+
+},
+{
+    "id": 10,
+    "name": "Darkness Titan Ilnoct",
+    "img": "/Assets/Enemies/Boss-Darkness-Titan-Ilnoct.png"
 
 }
-
-
 ]

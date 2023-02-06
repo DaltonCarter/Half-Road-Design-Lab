@@ -21,7 +21,7 @@ const Credits = () => {
         <a className='mb-3.5 p-2 border-8 border-double border-black text-3xl font-bold text-blue-700 italic underline ' href='https://www.myfreetextures.com/worn-parchment-paper-2/'>Link to: An old and worn out parchment paper background texture
 By: Phil</a>
 
-<Button className={'border-8 border-double border-black w-36 h-12 rounded-lg shadow-xl bg-white hover:bg-yellow-200 focus:translate-y-1'} onClick={() => navigate('/')} type={'Return to Title'}/>
+<Button className={'font-bold border-8 border-double border-black w-36 h-12 rounded-lg shadow-xl bg-white hover:bg-yellow-200 focus:translate-y-1'} onClick={() => navigate('/')} type={'Return to Title'}/>
     </div>
   )
 }

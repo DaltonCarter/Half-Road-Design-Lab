@@ -7,7 +7,7 @@ import axios from 'axios'
 
 
 const Backdrop = () => {
-    return <div className='secondary-backdrop'/>
+    return <div className='secondary-backdrop parchment-bg bg-cover bg-clip-padding '/>
 }
 
 const ModalOverlay = ({saveMessage, setSaveMessage, handleSecondModal, userId, character, level, currentExp, nextLevel, weapon, shield, helm, armor, accessory, items, equipment, keyItems, wallet}) => {
@@ -46,10 +46,10 @@ const ModalOverlay = ({saveMessage, setSaveMessage, handleSecondModal, userId, c
    }
 
     return(
-        <div className='secondary-modal'>
-            <h1 className='menu-title'>Save Game:</h1>
-            <h3>{saveMessage}</h3>
-            <table>
+        <div className='secondary-modal flex flex-col items-center text-center'>
+            <h1 className='menu-title m-3'>Save Game:</h1>
+            <h3 className='font-bold text-2xl italic underline'>{saveMessage}</h3>
+            <table className='m-3 w-full border-double border-black border-8'>
                 <thead>
                     <tr>
                 <th colSpan='4'>Character Stats:</th>
@@ -72,7 +72,7 @@ const ModalOverlay = ({saveMessage, setSaveMessage, handleSecondModal, userId, c
                 </tr>
                 </tbody>
             </table>
-            <table>
+            <table className='w-full border-double border-black border-8'>
                 <thead>
                     <tr>
                 <th colSpan='2'>Attributes:</th>
@@ -106,8 +106,8 @@ const ModalOverlay = ({saveMessage, setSaveMessage, handleSecondModal, userId, c
                 </tbody>
             </table>
 
-          <Button className={'menu-btn'} onClick={() => handleSave()} type={'Save'}/>
-          <Button className={'menu-btn'} onClick={() => handleSecondModal('Save')} type={'Close'}/>
+          <Button className={'menu-btn text-2xl font-semibold m-5 border-8 border-double border-gray-800 bg-clip-padding w-44 h-28 rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1'} onClick={() => handleSave()} type={'Save'}/>
+          <Button className={'menu-btn text-2xl font-semibold m-5 border-8 border-double border-gray-800 bg-clip-padding w-44 h-28 rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1'} onClick={() => handleSecondModal('Save')} type={'Close'}/>
 
         </div>
     )

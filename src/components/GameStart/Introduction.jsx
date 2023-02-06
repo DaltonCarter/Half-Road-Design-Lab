@@ -2,12 +2,12 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Backdrop = ({handleClick}) => {
-    return <div onClick={() => handleClick()} className='gameover-backdrop parchment-bg bg-cover flex flex-col justify-center items-center'/>
+    return <div onClick={() => handleClick()} className='gameover-backdrop parchment-bg bg-cover'/>
 }
 
 const IntroductionOverlay = ({handleClick}) => {
     return (
-        <div  onClick={() => handleClick()} className='gameover-modal flex flex-col justify-center items-center text-center'>
+        <div  onClick={() => handleClick()} className='gameover-modal flex flex-col justify-center items-center  text-center'>
             <h1  className='border-8 border-double border-black p-2 text-4xl m-5 font-bold'>INTRODUCTION:</h1>
             <h3 className='border-8 border-double border-black p-2 text-2xl m-5 font-bold'>This is the only plot you're getting so pay attention...or don't up to you,
                 but it MIGHT be important later... </h3>
@@ -37,10 +37,10 @@ const Introduction = () => {
         
     }
   return (
-    <section >
+    <div>
     <Backdrop handleClick={handleClick}/>
     <IntroductionOverlay handleClick={handleClick}/>
-    </section>
+    </div>
   )
 }
 

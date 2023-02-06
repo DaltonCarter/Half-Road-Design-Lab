@@ -25,7 +25,7 @@ const Auth = () => {
                 console.log('AFTER AUTH', data)
                 console.log(authCtx)
                 authCtx.login(data.token, data.exp, data.userId)
-                navigate('/Start')
+                navigate('/Load')
 
                 
             })
@@ -54,12 +54,12 @@ const Auth = () => {
                    type='password' 
                    placeholder='Password'
                    onChange={(e) => setPassword(e.target.value)}/>
-               <button className='m-5 border-8 border-double border-black w-36 h-14 bg-clip-padding rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1'>
+               <button className='m-5 font-bold border-8 border-double border-black w-36 h-14 bg-clip-padding rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1'>
                    {register ? 'Sign Up' : 'Login'}
                </button>
            </form>
-           <button className='m-5 border-8 border-double border-black w-36 h-14 bg-clip-padding rounded-lg shadow-xl bg-blue-500 hover:bg-blue-300 focus:translate-y-1' onClick={() => setRegister(!register)}>Need to {register ? 'Login' : 'Sign Up' }?</button>
-           <Button className='m-5 border-8 border-double border-black w-36 h-14 bg-clip-padding rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1' onClick={() => navigate('/')} type={'Cancel'}/>
+           <button className='m-5 font-bold border-8 border-double border-black w-40 h-14 bg-clip-padding rounded-lg shadow-xl bg-blue-500 hover:bg-blue-300 focus:translate-y-1' onClick={() => setRegister(!register)}>Need to {register ? 'Login' : 'Sign Up' }?</button>
+           <Button className='m-5 font-bold border-8 border-double border-black w-36 h-14 bg-clip-padding rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1' onClick={() => navigate('/')} type={'Cancel'}/>
        </main>
    )
 }

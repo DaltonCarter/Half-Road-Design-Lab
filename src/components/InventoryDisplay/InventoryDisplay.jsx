@@ -7,8 +7,8 @@ const InventoryDisplay = ({type}) => {
 
   return (
   <div>
-{type === 'Items' && <div className='inventory'>
-<h2 className='inventory-title'>Items:</h2>
+{type === 'Items' && <div className='flex items-center flex-col'>
+<h2 className='border-8 border-double border-black m-5 text-3xl underline p-3 bg-green-200 font-semibold'>Items:</h2>
 <div className='inventory-display-container'>
 {inventory.playerItems.map((item) => (
 <div className='inventory-card' key={item.id}>
@@ -21,8 +21,8 @@ const InventoryDisplay = ({type}) => {
 
 ))}
 </div>
-  </div> || type === 'Equip' && <div className='inventory'>
-  <h2 className='inventory-title'>Equipment:</h2>
+  </div> || type === 'Equip' && <div className='flex items-center flex-col'>
+  <h2 className='border-8 border-double border-black m-5 text-3xl underline p-3 bg-yellow-200 font-semibold'>Equipment:</h2>
   <div className='inventory-display-container'>
   {inventory.playerEquipment.map((equip) => (
     <div className='inventory-card' key={equip.id}>
@@ -36,8 +36,8 @@ const InventoryDisplay = ({type}) => {
       
 ))}
 </div>
-  </div> || type === 'Key Items' && <div className='inventory'>
-  <h2 className='inventory-title'>Key-Items:</h2>
+  </div> || type === 'Key Items' && <div className='flex items-center flex-col'>
+  <h2 className='border-8 border-double border-black m-5 text-3xl underline p-3 bg-pink-200 font-semibold'>Key-Items:</h2>
   <div className='inventory-display-container'>
   {inventory.playerKeyItems.map((kitem) => (
     <div className='inventory-card' key={kitem.id}>

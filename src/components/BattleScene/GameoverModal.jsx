@@ -4,16 +4,16 @@ import Button from '../Button'
 import { useNavigate } from 'react-router-dom'
 
 const Backdrop = () => {
-    return <div className='gameover-backdrop'/>
+    return <div className='gameover-backdrop gameover bg-cover bg-repeat-round'/>
 }
 
 const ModalOverlay = ({exitHandler}) => {
     
 
     return(
-        <div className='gameover-modal'>
-            <h1>GAMEOVER!</h1>
-            <Button onClick={() => exitHandler()} type={"Quit"}/>
+        <div className='gameover-modal flex justify-center items-center '>
+            
+            <Button className='font-bold border-8 border-double border-black rounded-lg bg-clip-padding fixed bottom-72 inset-x-2/4 bg-purple-700 shadow-xl hover:bg-purple-500 focus:translate-y-1 text-3xl font-bold w-40 h-20' onClick={() => exitHandler()} type={"Quit"}/>
         </div>
     )
 }
@@ -25,6 +25,7 @@ const GameoverModal = ({setInitialize}) => {
         player.Character.hp = player.Character.maxHP
         setInitialize(true)
         navigate('/')
+        setTimeout(() => {window.location.reload()}, 500)
     }
 
   return (

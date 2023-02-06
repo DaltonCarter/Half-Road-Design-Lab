@@ -58,8 +58,7 @@ const About = () => {
             <br/> 
             - Players can create a Login which will allow them to save and load their progress. Registering only requires
             a username, NO DUPLICATES, and a password. <br/>Load feature will display up to 6 of the users most recent saves,
-            which they can load or delete. ATTENTION: Currently only 1 run is permitted per user. If you wish to start over,
-            you will need to delete all of your current save files.
+            which they can load or delete. ATTENTION: It is currently up to THE USER to keep track/ manage their saves if they choose to have more than one run.
             <br/> 
             </p>
             <p className='italic text-xl font-semibold m-5 text-center'>
@@ -87,7 +86,7 @@ const About = () => {
                 will be dependant on how easily I can figure out, modify, and make the code.</h3>
                 
                 
-                <NavLink to='/'><Button className={'border-8 border-double border-black w-28 h-11 rounded-lg shadow-xl bg-white hover:bg-yellow-200 focus:translate-y-1'} type={'Return'}/></NavLink>
+                <NavLink to='/'><Button className={'border-8 font-bold border-double border-black w-28 h-11 rounded-lg shadow-xl bg-white hover:bg-yellow-200 focus:translate-y-1'} type={'Return'}/></NavLink>
     </div>
   )
 }

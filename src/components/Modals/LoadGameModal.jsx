@@ -16,11 +16,12 @@ const Backdrop = () => {
     return <div className='loot-backdrop parchment-bg bg-cover flex flex-col justify-center items-center'/>
   }
   
-  const ModalOverlay = ({saveFiles, setDisplayLoad, setGetFiles}) => {
+  const ModalOverlay = ({saveFiles, setGetFiles}) => {
     const navigate = useNavigate()
     const playerCtx = useContext(PlayerContext)
     const inventory = useContext(InventoryContext)
     const [loadId, setLoadId] = useState (0)
+    const [warning, setWarning] = useState(false)
 
     useEffect(() => {
       if(loadId === 0){
@@ -78,55 +79,47 @@ const Backdrop = () => {
 
     }
 
+    const handleNewGame = () => {
+      if(saveFiles.length === 0){
+        navigate('/Start')
+      }else{
+        setWarning(true)
+      }
+    }
+
     return(
-        <div className='loot-modal'>
+      
+        <div className='loot-modal flex flex-col items-center'>
+              {!warning && <Button className='m-5 font-bold border-8 border-double border-black w-36 h-14 bg-clip-padding rounded-lg shadow-xl bg-blue-500 hover:bg-blue-300 focus:translate-y-1' onClick={() => handleNewGame()} type={'Start New Game'}/>}
+        {warning && <section className='flex flex-col items-center'>
+          <h1 className='m-5 text-red-600 text-center text-2xl font-extrabold italic underline'>WARNING!!! Starting a new game when you have Saves from another run may make it so you cannot use your previous file. <br/> I won't stop you, but I will tell you that it is ON YOU to manage your save files so that you don't loose your other game.</h1>
+          <p className='text-center text-2xl font-extrabold italic underline'>Proceed anyway?</p>
+          <div className='flex'>
+          <Button className='m-5 font-bold border-8 border-double border-black w-20 h-10 bg-clip-padding rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1' onClick={() => navigate('/Start')} type={'Yes!'}/>
+          <Button className='m-5 font-bold border-8 border-double border-black w-20 h-10 bg-clip-padding rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1' onClick={() => setWarning(false)} type={'No!'}/>
+          </div>
+          </section>}
           {saveFiles.map((save) => {
             return (
              <SaveFileDisplay save={save} setLoadId={setLoadId} setGetFiles={setGetFiles}/>
-              
             )
           })} 
-          <Button onClick={() => setDisplayLoad(false)} type={'Close'}/>
+      
         </div>
     )
   }
 
 // END OF LOAD GAME FUNCTIONALITY
 
-// BEGIN FUNCTIONALITY FOR NEW USER NEW GAME
-const NewGameOverlay = () => {
-  const Player = useContext(PlayerContext)
-    const Inventory = useContext(InventoryContext)
-    const navigate = useNavigate()
-    const Character = Player.Character
-    const [name, setName] = useState('Arahc')
-    const keyItems = KeyItems
-  
 
-
-    const handleCharacter = () => {
-    Character.name = name
-    let newItem = keyItems[0]
-    Inventory.handleAddKeyItem(newItem)
-    navigate('/Intro')
-    }
-
-  return(
-    <div className='loot-modal flex flex-col justify-center items-center'>
-    <h2 className='m-5 text-xl font-bold'>Please name your Character!</h2>
-            <input className='border-8 border-double border-black bg-clip-padding p-2 m-5 text-xl italic w-72 h-14' defaultValue={name} placeholder={'name your Character'} onChange={(e) => setName(e.target.value)}/>
-            <Button className='m-5 border-8 border-double border-black w-60 h-14 bg-clip-padding rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1' onClick={() => handleCharacter()} type={'Confim and Begin game!'}/>
-            </div>
-  )
-}
-
-// END OF NEW GAME FOR NEW USER FUNCTIONALITY
 
 const LoadGameModal = ({setDisplayLoad}) => {
   const authCtx = useContext(AuthContext)
-  const [saveFiles, setSaveFiles] =useState()
+  const [saveFiles, setSaveFiles] =useState([])
   const [getFiles, setGetFiles] = useState(true)
-
+  
+  
+ 
 
 
     const retrieveSaveFiles = async () => {
@@ -148,13 +141,17 @@ const LoadGameModal = ({setDisplayLoad}) => {
   useEffect(() => {
     if(getFiles === true){
       retrieveSaveFiles()
+      
+      console.log(saveFiles)
+      
     }
+    
     
   }, [getFiles])
   return (
     <div>
         <Backdrop/>
-        {saveFiles === {} ? <ModalOverlay setGetFiles={setGetFiles} saveFiles={saveFiles} setDisplayLoad={setDisplayLoad}/> : <NewGameOverlay /> }
+        <ModalOverlay setGetFiles={setGetFiles} saveFiles={saveFiles} setDisplayLoad={setDisplayLoad}/>
         
     </div>
   )

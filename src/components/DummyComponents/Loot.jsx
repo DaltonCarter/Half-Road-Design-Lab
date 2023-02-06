@@ -58,7 +58,9 @@ function Loot({ displayHandler }) {
   };
 
   return (
-    <div className="money-gain-modal">
+    <div className="money-gain-modal flex flex-col items-center fixed p-6 left-1 top-36 border-8 border-double border-black bg-green-500">
+      <h1 className="text-2xl font-semibold italic underline">Debugging Menu: 
+        </h1>
       <Button
         className={
           "m-5 border-8 border-double border-gray-800 bg-clip-padding w-36 h-11 rounded-lg shadow-xl bg-blue-500 hover:bg-blue-300 focus:translate-y-1"

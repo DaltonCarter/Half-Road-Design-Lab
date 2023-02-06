@@ -17,6 +17,7 @@ const PlayerContext = createContext({
     totalAtk: 0,
     totalDef: 0,
     totalDef: 0,
+    levelUp: null,
     setWeaponSlot: () => {},
     setShieldSlot: () => {},
     setHelmSlot: () => {},
@@ -29,6 +30,7 @@ const PlayerContext = createContext({
     setLevel: () => {},
     setCurrentExp: () => {},
     setNextLevel: () => {},
+    setLevelUp: () => {}
     
 
 })
@@ -96,6 +98,7 @@ export const PlayerContextProvider = (props) => {
     const [totalAtk, setTotalAtk] = useState(0)
     const [totalDef, setTotalDef] = useState(0)
     const [totalAgi, setTotalAgi] = useState(0)
+    const [levelUp, setLevelUp] = useState(false)
     
     
 
@@ -108,6 +111,7 @@ useEffect(() => {
 
 const checkExp = () => {
     if(currentExp >= nextLevel){
+        setLevelUp(true)
         // console.log(Character)
         let newLevel = level + 1
         let newCurrentXP = currentExp - nextLevel
@@ -230,6 +234,7 @@ let contextValue = {
    totalAtk,
    totalDef,
    totalAgi,
+   levelUp,
    setWeaponSlot,
    setShieldSlot,
    setHelmSlot,
@@ -241,7 +246,8 @@ let contextValue = {
    setCharacter,
    setLevel,
    setCurrentExp,
-   setNextLevel
+   setNextLevel,
+   setLevelUp
    
 
 }

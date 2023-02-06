@@ -67,6 +67,7 @@ export const AuthContextProvider = (props) => {
     if(logoutTimer){
       clearTimeout(logoutTimer)
     }
+    setTimeout(() => {window.location.reload()}, 500)
 
   }
 

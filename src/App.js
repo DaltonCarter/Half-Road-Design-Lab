@@ -9,6 +9,7 @@ import Auth from './components/GameStart/Auth';
 import GameStart from './components/GameStart/GameStart';
 import Introduction from './components/GameStart/Introduction';
 import Credits from './components/Credits/Credits';
+import LoadGameModal from './components/Modals/LoadGameModal';
 
 function App() {
   const [initialize, setInitialize] = useState(true)
@@ -22,7 +23,8 @@ function App() {
         <Route path='/About' element={<About />}/>
         <Route path='/Start' element={<GameStart />}/>      
         <Route path='/Intro' element={<Introduction />}/>      
-        <Route path='/Credits' element={<Credits />}/>      
+        <Route path='/Credits' element={<Credits />}/>  
+        <Route path='/Load' element={<LoadGameModal />}/>    
         <Route path='/Battle' element={<BattleScene initialize={initialize} setInitialize={setInitialize}/>}/>      
       </Routes>
     </div>

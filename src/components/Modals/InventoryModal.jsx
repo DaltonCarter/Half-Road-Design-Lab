@@ -14,10 +14,10 @@ const ModalOverlay = ({ handleSecondModal, displayHandler, displayEquipment, dis
             <h1 className='menu-title'>Inventory:</h1>
             <div className='selection-container'>
             <h1 className='type'>Type:</h1> 
-            <Button className={'inventory-button'} onClick={() => displayHandler('Items')} type='Items'/> 
-            <Button className={'inventory-button'} onClick={() => displayHandler('Equip')} type='Equipment'/>
-            <Button className={'inventory-button'} onClick={() => displayHandler('Key Items')} type='Key Items'/>
-            <Button className={'inventory-button'} onClick={() => handleSecondModal('Inventory')} type='Close'/>
+            <Button className={'inventory-button bg-green-500 border-8 border-double border-black hover:bg-green-300 focus:translate-y-1'} onClick={() => displayHandler('Items')} type='Items'/> 
+            <Button className={'inventory-button bg-yellow-500 border-8 border-double border-black hover:bg-yellow-300 focus:translate-y-1'} onClick={() => displayHandler('Equip')} type='Equipment'/>
+            <Button className={'inventory-button bg-pink-500 border-8 border-double border-black hover:bg-pink-300 focus:translate-y-1'} onClick={() => displayHandler('Key Items')} type='Key Items'/>
+            <Button className={'inventory-button bg-red-500 border-8 border-double border-black hover:bg-red-300 focus:translate-y-1'} onClick={() => handleSecondModal('Inventory')} type='Close'/>
             </div>
             <div>
             {displayItems && <InventoryDisplay type={'Items'}/>}

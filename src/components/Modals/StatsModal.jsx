@@ -13,10 +13,10 @@ const ModalOverlay = ({handleSecondModal, character, level, nextLevel, exp, weap
     
 
     return(
-        <div className='secondary-modal'>
-            <h1 className='menu-title'>Character Information:</h1>
-            <section className='stat-display'>
-            <table>
+        <div className='secondary-modal flex flex-col items-center'>
+            <h1 className='menu-title m-3 bg-gray-300 border-8 p-3 border-double border-black'>Character Information:</h1>
+            <section className='stat-display m-3'>
+            <table className=''>
                 <thead>
                     <tr>
                 <th colSpan='4'>Character Stats:</th>
@@ -84,7 +84,7 @@ const ModalOverlay = ({handleSecondModal, character, level, nextLevel, exp, weap
             </table>
             </section>
             
-            <Button className={'stats-btn'} onClick={() => handleSecondModal('Stats')} type={'Close'}/>
+            <Button className='stats-btn m-3 border-8 border-double border-black hover:bg-gray-300' onClick={() => handleSecondModal('Stats')} type={'Close'}/>
         </div>
     )
 }

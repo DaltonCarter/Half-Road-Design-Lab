@@ -62,13 +62,13 @@ const BattleScene = ({initialize, setInitialize}) => {
     }, [initialize])
 
     const generateEnemy = () => {
-        let selection = Math.floor(Math.random() * 5)
+        let selection = Math.floor(Math.random() * 10)
         let {name, img} = Enemies[selection]
         console.log(name, img)
-        let hp = 25 + Math.floor(Math.random() * 100)
-        let atk = 6 + Math.floor(Math.random() * 15)
-        let def = 5 + Math.floor(Math.random() * 6)
-        let agi = 5 + Math.floor(Math.random() * 10)
+        let hp = 35 + Math.floor(Math.random() * 100)
+        let atk = 19 + Math.floor(Math.random() * 15)
+        let def = 8 + Math.floor(Math.random() * 5)
+        let agi = 8 + Math.floor(Math.random() * 10)
 
         let opponent = {
             name: name,
@@ -86,10 +86,10 @@ const BattleScene = ({initialize, setInitialize}) => {
     const determineInitiative = (pAgi, eAgi) => {
         if(pAgi > eAgi){
             setPlayerTurn(true)
-            setBattleMessage(`it is ${actor.name}s' turn!`)
+            setBattleMessage(`It is ${actor.name}s' turn!`)
         }else {
             setPlayerTurn(false)
-            setBattleMessage(`it is ${enemy.name}s' turn!`)
+            setBattleMessage(`It is ${enemy.name}s' turn!`)
         }
     }
 
@@ -113,7 +113,7 @@ const BattleScene = ({initialize, setInitialize}) => {
 
         }else {
             if(playerTurn === false){
-                setBattleMessage(`it is ${enemy.name}s' turn!`)
+                setBattleMessage(`It is ${enemy.name}s' turn!`)
                 if(enemy.hp === 0){
                     setVictory(true)
                 }else {
@@ -281,59 +281,58 @@ useEffect(() => {
 
 // End of Battle Result handling ^^^^^^^^^^^^^^^^
   return (
-    <div>
-         
-        <div className=' bg-no-repeat bg-auto Battle-Background bg-cover'  id='enemy-container'>
+    <div className=' bg-no-repeat Battle-Background bg-cover'>
+        <div   id='enemy-container'>
             {enemy !== undefined && <div>
-                <div className='flex flex-col justify-center items-center text-center border-8 border-double border-gray-800 bg-clip-padding w-36 h-32 rounded-lg shadow-xl bg-red-500'>
-                <h1>{enemy.name}</h1>
-                <h3>{enemy.hp}/{enemy.maxHp}</h3>
+                <div className='flex flex-col justify-center items-center text-center border-8 border-double border-black w-52 h-40 rounded-lg shadow-xl bg-red-500'>
+                <h1 className='text-2xl font-bold underline'>{enemy.name}</h1>
+                <h3 className='text-lg underline'>{enemy.hp}/{enemy.maxHp}</h3>
                 </div>
-                {enemy.name === 'Chaos' ? <img className=' h-2/4 fixed inset-x-1/3 inset-y-72' src={enemy.img}/> : enemy.name === 'Bahamut'? <img className='h-3/4 fixed inset-x-1/3 inset-y-1' src={enemy.img}/> : <img className='h-28 fixed inset-x-2/4 inset-y-2/3' src={enemy.img}/>}
+                 <img className='h-96 fixed inset-x-2/4 inset-y-2/4' src={enemy.img}/>
             </div>
 }  
         </div>
-        <div className='flex flex-col justify-center items-center text-center' id='battle-message'>
-            <p>{battleMessage}</p>
+        <div className='flex flex-col justify-center items-center text-center text-xl' id='battle-message'>
+            <p className='fixed bottom-52 left-12 right-12'>{battleMessage}</p>
             <br/>
-            <div className='h-64 overflow-y-scroll fixed right-96 bottom-1 flex flex-col border-8 border-double border-gray-800 bg-clip-padding w-96 bg-blue-500' >{battleUpdate.map((e) => <p>{e}</p>)}
+            <div className='h-64 overflow-y-scroll fixed right-1 bottom-1 flex flex-col border-8 border-double border-gray-800 bg-clip-padding w-96 bg-blue-500' >{battleUpdate.map((e) => <p className='m-3' >{e}</p>)}
             <div ref={updateEndRef} />
             </div>
         </div>
-        <div className='flex flex-col justify-center items-center' id='player-container'>
+        <div className='flex flex-col items-center fixed bottom-10 left-12 right-12' id='player-container'>
             <div id='player-info'>
-                <h1 className='text-center'>{actor.name}</h1>
-                <p className='text-center'>Level: {Player.level}</p>
-                <h3 className='text-center'>Health: {actor.hp}/{pMaxHp}</h3>
+                <h1 className='text-center text-lg font-semibold'>{actor.name}</h1>
+                <p className='text-center text-lg font-semibold'>Level: {Player.level}</p>
+                <h3 className='text-center text-lg font-semibold'>Health: {actor.hp}/{pMaxHp}</h3>
             </div>
            {playerTurn && <div> 
             <Button 
-                className={'m-5 border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1'} 
+                className={'m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1'} 
                 onClick={() => fightCommand()}
                  type={'Fight'}/>
             <Button 
-            className={'m-5 border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-gray-500 hover:bg-gray-300 focus:translate-y-1'} 
+            className={'m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-gray-500 hover:bg-gray-300 focus:translate-y-1'} 
             onClick={() => defendCommand()} 
             type={'Defend'}/>
             <Button 
-            className={'m-5 border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1'} 
+            className={'m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1'} 
             onClick={() => setItemSelection(true)} 
             type={'Item'} />
             <Button 
-            className={'m-5 border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-yellow-500 hover:bg-yellow-300 focus:translate-y-1'} 
+            className={'m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-yellow-500 hover:bg-yellow-300 focus:translate-y-1'} 
             onClick={() => fleeCommand()} 
             type={'Flee'}/>
             </div>}
-            {itemSelection && <div className=' w-1/3 h-64 flex flex-wrap justify-around items-center fixed bottom-1 left-1 border-8 border-double border-gray-800 bg-clip-padding bg-blue-500'>
+            {itemSelection && <div className=' overflow-y-scroll w-1/3 h-64 flex flex-wrap justify-around items-center fixed bottom-1 left-1 border-8 border-double border-gray-800 bg-clip-padding bg-blue-500'>
                         {playerItems.map((i) => (
-                            <div key={i.id}>
-                                <p>{i.name}</p>
-                                <p>{i.desc}</p>
-                                <p>Qty: {i.amount}</p>
-                                <Button onClick={() => itemCommand(i.id)} type={'Use'}/>
+                            <div className='m-2 flex flex-col items-center border-8 border-double p-5 border-black' key={i.id}>
+                                <p className='m-1 font-bold text-center'>{i.name}</p>
+                                <p className='m-1 italic underline'>{i.desc}</p>
+                                <p className='m-1 text-center font-semibold'>Qty: {i.amount}</p>
+                                <Button className=' m-1 font-bold border-8 border-double border-black w-20 h-10 bg-clip-padding rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1' onClick={() => itemCommand(i.id)} type={'Use'}/>
                             </div>
                         ))}
-                        <Button onClick={() => setItemSelection(false)} type={'Close'}/>
+                        <Button className=' m-1 font-bold border-8 border-double border-black w-20 h-10 bg-clip-padding rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1' onClick={() => setItemSelection(false)} type={'Close'}/>
                 </div>}
                 {displaySpoils === true && <Loot setInitialize={setInitialize}/>}
                 {displayGameover === true && <GameoverModal setInitialize={setInitialize}/>}

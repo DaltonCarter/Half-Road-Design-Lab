@@ -35,6 +35,7 @@ function ShopScene({ displayShop }) {
         setTimeout(() => setShopText("What would you like to buy?"), 2000);
       } else {
         setBuyItems(true);
+        setBuyEquipment(false)
       }
     } else if (type === "Equip") {
       if (inventory.wallet === 0) {
@@ -43,6 +44,7 @@ function ShopScene({ displayShop }) {
         setTimeout(() => setShopText("What would you like to buy?"), 2000);
       } else {
         setBuyEquipment(true);
+        setBuyItems(false)
       }
     } else if (type === "S-Items") {
       if (inventory.playerItems === []) {
@@ -52,6 +54,7 @@ function ShopScene({ displayShop }) {
         setTimeout(() => setShopText("What would you like to sell?"), 2000);
       } else {
         setSellItems(true);
+        setSellEquipment(false)
       }
     } else if (type === "S-Equip") {
       if (inventory.playerEquipment === []) {
@@ -61,6 +64,7 @@ function ShopScene({ displayShop }) {
       } else {
         console.log('ping')
         setSellEquipment(true);
+        setSellItems(false)
       }
     } else if (type === "Close" && buy === true) {
       setBuy((prevBuy) => !prevBuy);
@@ -171,39 +175,39 @@ function ShopScene({ displayShop }) {
   }
 
   return (
-    <div className="shop-scene">
-      <p>Welcome to our Shop!</p>
+    <div className="flex flex-col p-5 items-center shop-scene border-8 border-double border-black rounded-lg z-50 bg-blue-700 w-full  bg-opacity-90">
+      <h1 className="text-3xl font-bold border-b-4 border-black italic">Welcome to our Shop!</h1>
 
-      <div>
-        {shopText}
+      <div className="flex flex-col items-center">
+        <p className="m-5 text-xl font-semibold">{shopText}</p>
         <br />
-        Your Funds: {inventory.wallet} Xal
+        <p className="text-xl font-semibold">Your Funds: {inventory.wallet} Xal</p>
         <br />
         {!buy && !sell && (
-          <Button onClick={() => clickHandler("Buy")} type="buy" />
+          <Button className='m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-gray-500 hover:bg-gray-300 focus:translate-y-1' onClick={() => clickHandler("Buy")} type="buy" />
         )}
-        {buy && <Button onClick={() => clickHandler("Items")} type={"Items"} />}
-        {buy && <Button onClick={() => clickHandler("Equip")} type={"Equip"} />}
-        {buy && <Button onClick={() => exitHandler()} type={"Close"} />}
+        {buy && <Button className='m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1' onClick={() => clickHandler("Items")} type={"Items"} />}
+        {buy && <Button className='m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-yellow-500 hover:bg-yellow-300 focus:translate-y-1' onClick={() => clickHandler("Equip")} type={"Equip"} />}
+        {buy && <Button className='m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1' onClick={() => exitHandler()} type={"Close"} />}
         {!sell && !buy && (
-          <Button onClick={() => clickHandler("Sell")} type={"sell"} />
+          <Button className='m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-gray-500 hover:bg-gray-300 focus:translate-y-1' onClick={() => clickHandler("Sell")} type={"sell"} />
         )}
         {sell && (
-          <Button onClick={() => clickHandler("S-Items")} type={"S-Items"} />
+          <Button className='m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1' onClick={() => clickHandler("S-Items")} type={"S-Items"} />
         )}
         {sell && (
-          <Button onClick={() => clickHandler("S-Equip")} type={"S-Equip"} />
+          <Button className='m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-yellow-500 hover:bg-yellow-300 focus:translate-y-1' onClick={() => clickHandler("S-Equip")} type={"S-Equip"} />
         )}
         {sell && (
-          <Button onClick={() => exitHandler()} type={"Close"} />
+          <Button className='m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1' onClick={() => exitHandler()} type={"Close"} />
         )}
         {!buy && !sell && (
-          <Button onClick={() => displayShop()} type={"Close"} />
+          <Button className='m-5 font-bold border-8 border-double border-gray-800 bg-clip-padding w-28 h-11 rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1' onClick={() => displayShop()} type={"Close"} />
         )}
       </div>
 
       <div className="inventory-display">
-      <h2>Stock:</h2>
+      
         {buyItems && <ShopDisplay exitHandler={exitHandler} storeItems={storeItems} type={'Buy Items'} handleItemPurchase={handleItemPurchase}/>}
         {buyEquipment && <ShopDisplay exitHandler={exitHandler} storeEquipment={storeEquipment} type={'Buy Equipment'} handleEquipmentPurchase={handleEquipmentPurchase}/>}
         {sellItems && <ShopDisplay  exitHandler={exitHandler} type={'Sell Items'} handleSoldItem={handleSoldItem}/>}

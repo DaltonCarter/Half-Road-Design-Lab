@@ -13,18 +13,19 @@ const Backdrop = () => {
     return <div className='backdrop'/>
 }
 
-const ModalOverlay = ({inventory, handleSecondModal}) => {
+const ModalOverlay = ({inventory, handleSecondModal, menuToggle}) => {
 
     const authCtx = useContext(AuthContext)
     return(
         <div className='modal'>
             <h1 className='menu-title'>Main Menu:</h1>
         <div className='menu-selections'>
-        <Button className="menu-button" onClick={() => handleSecondModal('Inventory')} type='Inventory'/>
-        <Button className="menu-button" onClick={() => handleSecondModal('Stats')} type='Stats'/>
-        <Button className="menu-button" onClick={() => handleSecondModal('Equip')} type='Equip'/>
-        {authCtx.token && <Button className="menu-button" onClick={() => handleSecondModal('Save')} type={'Save Game'}/>}
-        {authCtx.token ? <NavLink to={'/'}><Button className="menu-button" onClick={() => authCtx.logout()} type={'Logout'}/></NavLink> : <NavLink to={'/'}><Button className="menu-button" type={'Quit Game'}/></NavLink>}
+        <Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => handleSecondModal('Inventory')} type='Inventory'/>
+        <Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => handleSecondModal('Stats')} type='Stats'/>
+        <Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => handleSecondModal('Equip')} type='Equip'/>
+        {authCtx.token && <Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => handleSecondModal('Save')} type={'Save Game'}/>}
+        <Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => menuToggle()} type={'Close Menu'}/>
+        {authCtx.token ? <NavLink to={'/'}><Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => authCtx.logout()} type={'Logout'}/></NavLink> : <NavLink to={'/'}><Button className="menu-button hover:bg-gray-300 focus:translate-y-1" onClick={() => setTimeout(() => {window.location.reload()}, 500)} type={'Quit Game'}/></NavLink>}
         </div>
         <p className='wallet'>Xal: {inventory.wallet}</p>
         </div>
@@ -33,7 +34,7 @@ const ModalOverlay = ({inventory, handleSecondModal}) => {
 
 
 
-const MenuModal = () => {
+const MenuModal = ({menuToggle}) => {
     let inventory = useContext(InventoryContext)
     const [displayInventoryModal, setDisplayInventoryModal] = useState(false)
     const [displayStatsModal, setDisplayStatsModal] = useState(false)
@@ -70,7 +71,7 @@ const MenuModal = () => {
   return (
     <section>
     <Backdrop />
-    <ModalOverlay inventory={inventory} handleSecondModal={handleSecondModal}/>
+    <ModalOverlay inventory={inventory} handleSecondModal={handleSecondModal} menuToggle={menuToggle}/>
     {displayInventoryModal && <InventoryModal handleSecondModal={handleSecondModal}/>}
     {displayStatsModal && <StatsModal handleSecondModal={handleSecondModal}/>}
     {displayEquipModal && <EquipModal handleSecondModal={handleSecondModal}/>}

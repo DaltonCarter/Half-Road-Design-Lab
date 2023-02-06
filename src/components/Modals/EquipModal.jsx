@@ -9,54 +9,54 @@ const Backdrop = () => {
 
 const ModalOverlay = ({ handleSecondModal, Equipment, weaponSlot, shieldSlot, helmSlot, armorSlot, accessorySlot, EquipWeaponHandler, EquipShieldHandler, EquipHelmHandler, EquipArmorHandler, EquipAccessoryHandler}) => {
     return(
-        <div className='secondary-modal'>
-            <h1 className='menu-title'>Player Equipment:</h1>
-            <div className="equip-scene">
-            <label for='Weapon'>Weapon: </label>
-            <select name='weapon' id="Weapon" onChange={(e) => EquipWeaponHandler(e.target.value)}>
+        <div className='secondary-modal flex flex-col items-center'>
+            <h1 className='menu-title m-5 p-3 bg-gray-300 border-8 border-double border-black'>Player Equipment:</h1>
+            <div className="equip-scene flex flex-col">
+            <label className="m-1 text-2xl font-bold border-4 p-1 border-solid border-black bg-red-300 text-center" for='Weapon'>Weapon: </label>
+            <select className="mb-2 border-4 border-solid border-black" name='weapon' id="Weapon" onChange={(e) => EquipWeaponHandler(e.target.value)}>
             <option value="" disabled selected>Select an Option</option>
                 {Equipment.filter((w) => w.type === 'Weapon').map((w) => (
                     <option value={w.id}>{w.name}</option>
                 ))}
             </select>
-            <label for='Shield'>Shield: </label>
-             <select name='shield' id="Shield" onChange={(e) => EquipShieldHandler(e.target.value)}>
+            <label className="m-1 text-2xl font-bold border-4 p-1 border-solid border-black bg-red-300 text-center" for='Shield'>Shield: </label>
+             <select className="mb-2 p-2 border-4 border-solid border-black"  name='shield' id="Shield" onChange={(e) => EquipShieldHandler(e.target.value)}>
             <option value="" disabled selected>Select an Option</option>
                 {Equipment.filter((w) => w.type === 'Shield').map((w) => (
                     <option value={w.id}>{w.name}</option>
                 ))}
             </select>
-            <label for='Helm'>Helmet: </label>
-             <select name='helm' id="Helm" onChange={(e) => EquipHelmHandler(e.target.value)}>
+            <label className="m-1 text-2xl font-bold border-4 p-1 border-solid border-black bg-red-300 text-center" for='Helm'>Helmet: </label>
+             <select className="mb-2 p-2 border-4 border-solid border-black"  name='helm' id="Helm" onChange={(e) => EquipHelmHandler(e.target.value)}>
             <option value="" disabled selected>Select an Option</option>
                 {Equipment.filter((w) => w.type === 'Helm').map((w) => (
                     <option value={w.id}>{w.name}</option>
                 ))}
             </select>
-            <label for='Armor'>Armor: </label>
-            <select name='Armor' id="Armor" onChange={(e) => EquipArmorHandler(e.target.value)}>
+            <label className="m-1 text-2xl font-bold border-4 p-1 border-solid border-black bg-red-300 text-center" for='Armor'>Armor: </label>
+            <select className="mb-2 p-2 border-4 border-solid border-black"  name='Armor' id="Armor" onChange={(e) => EquipArmorHandler(e.target.value)}>
             <option value="" disabled selected>Select an Option</option>
                 {Equipment.filter((w) => w.type === 'Armor').map((w) => (
                     <option value={w.id}>{w.name}</option>
                 ))}
             </select>
-            <label for='Accessory'>Accessory: </label>
-            <select name='Accessory' id="Accessory" onChange={(e) => EquipAccessoryHandler(e.target.value)}>
+            <label className="m-1 text-2xl font-bold border-4 p-1 border-solid border-black bg-red-300 text-center" for='Accessory'>Accessory: </label>
+            <select className="mb-2 p-2 border-4 border-solid border-black"  name='Accessory' id="Accessory" onChange={(e) => EquipAccessoryHandler(e.target.value)}>
             <option value="" disabled selected>Select an Option</option>
                 {Equipment.filter((w) => w.type === 'Accessory').map((w) => (
                     <option value={w.id}>{w.name}</option>
                 ))}
             </select>
             </div>
-            <h1 className='menu-title'>Current Equipment:</h1>
-            <div className="current-equip">
-                    <p>Weapon: {weaponSlot !== undefined ? weaponSlot.name : "None"}</p>
-                    <p>Shield: {shieldSlot !== undefined ? shieldSlot.name : "None"}</p> 
-                    <p>Helmet: {helmSlot !== undefined ? helmSlot.name : "None"}</p>
-                    <p>Armor: {armorSlot !== undefined ? armorSlot.name : "None"}</p>
-                    <p>Accessory: {accessorySlot !== undefined ? accessorySlot.name : "None"}</p> 
+            <h1 className='menu-title m-5 p-3 bg-gray-300 border-8 border-double border-black'>Current Equipment:</h1>
+            <div className="current-equip border-8 border-black border-double bg-blue-200 p-3">
+                    <p className="text-xl font-semibold">Weapon: {weaponSlot !== undefined ? weaponSlot.name : "None"}</p>
+                    <p className="text-xl font-semibold">Shield: {shieldSlot !== undefined ? shieldSlot.name : "None"}</p> 
+                    <p className="text-xl font-semibold">Helmet: {helmSlot !== undefined ? helmSlot.name : "None"}</p>
+                    <p className="text-xl font-semibold">Armor: {armorSlot !== undefined ? armorSlot.name : "None"}</p>
+                    <p className="text-xl font-semibold">Accessory: {accessorySlot !== undefined ? accessorySlot.name : "None"}</p> 
             </div>
-            <Button className={'stats-btn'} onClick={() => handleSecondModal('Equip')} type={'Close'}/>
+            <Button className={'m-3 stats-btn border-8 border-double border-black hover:bg-gray-300 focus:translate-y-1'} onClick={() => handleSecondModal('Equip')} type={'Close'}/>
         </div>
     )
 }
