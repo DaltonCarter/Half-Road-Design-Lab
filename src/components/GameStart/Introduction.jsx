@@ -7,17 +7,17 @@ const Backdrop = ({handleClick}) => {
 
 const IntroductionOverlay = ({handleClick}) => {
     return (
-        <div  onClick={() => handleClick()} className='gameover-modal flex flex-col justify-center items-center  text-center'>
-            <h1  className='border-8 border-double border-black p-2 text-4xl m-5 font-bold'>INTRODUCTION:</h1>
+        <div  onClick={() => handleClick()} className='gameover-modal container box-border flex flex-col justify-center items-center text-center '>
+            <h1  className='border-8 border-double border-black p-2 m-5 font-bold xl:m-3 xl:text-3xl 2xl:text-4xl'>INTRODUCTION:</h1>
             <h3 className='border-8 border-double border-black p-2 text-2xl m-5 font-bold'>This is the only plot you're getting so pay attention...or don't up to you,
                 but it MIGHT be important later... </h3>
-            <p className='text-2xl m-5 font-semibold italic'>
+            <p className='text-2xl m-5 font-semibold italic w-2/4 xl:text-xl'>
                 You hail from the Vernath Empire and are 'x'th child of a minor noble house.
                 Meaning you don't get to rely on an inheritance like your older sibling(s).
                 <br/>So you decided to take your love for combat and try to forge a Name
                 and fortune all your own.
             </p>
-            <p className='text-2xl m-5 font-semibold italic'>
+            <p className='text-2xl m-5 font-semibold italic w-2/4 xl:text-xl'>
                 Your sharp mind, and raw talent in battle quickly brought
                 you prominence in the Imperial Army. Ever hungry for the chance to
                 improve, and test yourself you volunteered<br/> to be the Imperial representative

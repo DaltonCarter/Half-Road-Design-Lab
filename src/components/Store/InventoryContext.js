@@ -1,4 +1,5 @@
 import {createContext, useState} from 'react'
+import KeyItems from '../../Databases/Key-Items.json'
 
 const InventoryContext = createContext({
     wallet: null,

@@ -9,7 +9,7 @@ const About = () => {
 
         <h2 className='border-8 border-double border-black p-2 bg-clip-padding bg-yellow-100  text-4xl m-5 font-bold'>Technologies Used:</h2>
 
-            <div className='border-8 border-double border-black bg-clip-padding bg-yellow-100 flex justify-around items-center'>
+            <div className='p-4 border-8 border-double border-black bg-clip-padding bg-yellow-100 flex justify-around items-center'>
 
             <img alt='React.js' className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
           
@@ -28,6 +28,8 @@ const About = () => {
             <img alt='Postgres SQL'  className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg" />
           
             <img alt='Adobe Photoshop' className='w-20 m-5' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg" />
+
+            <p className='font-bold text-lg'>Technologies without icons: Axios, CORS, JSON Web Token, and BCrypt.js</p>
           
           
             </div>

@@ -255,8 +255,8 @@ tr{
 }
 
 .Battle-Background{
-  height: 80vh;
   background-image: url(/src/Assets/Backgrounds/vecteezy_ancient-roman-arena-for-gladiators-fight_15370321.jpg);
+  height: calc(100vh - 225px)
 }
 
 .parchment-bg{
@@ -277,4 +277,15 @@ height: 100vh;
 .gameover {
   background-image: url(/src/Assets/Backgrounds/Gameover.png);
   
+}
+
+.battler{
+  margin: 0 auto;
+  max-height: 500px;
+
+}
+
+#enemy-container {
+  height: 50%;
+padding-top: 23%;
 }

@@ -11,7 +11,7 @@ module.exports = {
             const saveFiles = await SaveFile.findAll({
                 where: {userId: +userId},
                 order: [['id', 'DESC']],
-                limit: 2
+                limit: 6
             })
             // console.log(saveFiles)
             res.status(200).send(saveFiles)

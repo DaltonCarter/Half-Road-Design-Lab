@@ -114,6 +114,22 @@ const BattleScene = ({initialize, setInitialize}) => {
             agi: agi
         }
         setEnemy(opponent)
+    }else {
+        let hp = Player.totalHp + Math.floor(Math.random() * 100)
+        let atk = Player.totalAtk + Math.floor(Math.random() * 20)
+        let def = Player.totalDef
+        let agi = Player.totalAgi + Math.floor(Math.random() * 10)
+
+        let opponent = {
+            name: name,
+            img: img,
+            hp: hp,
+            maxHp: hp,
+            atk: atk,
+            def: def,
+            agi: agi
+        }
+        setEnemy(opponent)
     }
         
     }
@@ -296,13 +312,13 @@ const fleeCommand = () => {
 
 // Battle result handling vvvvvvvvvvv
 
-
 useEffect(() => {
     if(victory === false){
 
     }else {
         setPlayerTurn(undefined)
         setDisplaySpoils(true)
+        
     }
 
     if(gameover === false){
@@ -310,6 +326,8 @@ useEffect(() => {
     }else {
         setPlayerTurn(undefined)
         setDisplayGameover(true)
+        
+        
     }
 }, [victory, gameover])
 
@@ -317,28 +335,31 @@ useEffect(() => {
 // End of Battle Result handling ^^^^^^^^^^^^^^^^
   return (
     <div className=' bg-no-repeat Battle-Background bg-cover'>
-        <div   id='enemy-container'>
+        <div  className=' flex justify-center items-center' id='enemy-container' >
             {enemy !== undefined && <div>
-                <div className='flex flex-col justify-center items-center text-center border-8 border-double border-black w-52 h-40 rounded-lg shadow-xl bg-red-500'>
+                <div className='flex flex-col justify-center items-center text-center border-8 border-double border-black w-56 h-56 rounded-lg shadow-xl bg-red-500'>
                 <h1 className='text-2xl font-bold underline'>{enemy.name}</h1>
-                <h3 className='text-lg underline'>{enemy.hp}/{enemy.maxHp}</h3>
+                <h3 className='text-2xl font-bold underline'>Health: {enemy.hp}/{enemy.maxHp}</h3>
+                <h1 className='text-2xl font-bold underline'>Atk: {enemy.atk}</h1>
+                <h1 className='text-2xl font-bold underline'>Def: {enemy.def}</h1>
+                <h1 className='text-2xl font-bold underline'>Agi: {enemy.agi}</h1>
                 </div>
-                 <img className='h-96 fixed inset-x-2/4 inset-y-2/4' src={enemy.img}/>
+                 <img className='battler object-contain resize' src={enemy.img}/>
             </div>
 }  
         </div>
         <div className='flex flex-col justify-center items-center text-center text-xl' id='battle-message'>
-            <p className='fixed bottom-52 left-12 right-12'>{battleMessage}</p>
+            {/* <p className='fixed bottom-56 left-12 right-12'>{battleMessage}</p> */}
             <br/>
             <div className='h-64 overflow-y-scroll fixed right-1 bottom-1 flex flex-col border-8 border-double border-gray-800 bg-clip-padding w-96 bg-blue-500' >{battleUpdate.map((e) => <p className='m-3' >{e}</p>)}
             <div ref={updateEndRef} />
             </div>
         </div>
         <div className='flex flex-col items-center fixed bottom-10 left-12 right-12' id='player-container'>
-            <div id='player-info'>
+            <div className='bg-blue-400 border-8 border-double border-black p-4' id='player-info'>
                 <h1 className='text-center text-lg font-semibold'>{actor.name}</h1>
                 <p className='text-center text-lg font-semibold'>Level: {Player.level}</p>
-                <h3 className='text-center text-lg font-semibold'>Health: {actor.hp}/{pMaxHp}</h3>
+                <h3 className='text-center text-lg font-semibold text-red-700'>Health: {actor.hp}/{pMaxHp}</h3>
             </div>
            {playerTurn && <div> 
             <Button 

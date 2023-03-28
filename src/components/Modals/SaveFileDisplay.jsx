@@ -4,7 +4,8 @@ import axios from 'axios'
 
 
 const SaveFileDisplay = ({save, setLoadId, setGetFiles}) => {
-
+    let  player = JSON.parse(save.characterData)
+    let name = player.name
   const deleteHandler = async (id) => {
 
     await axios.delete(`/delete/${id}`)
@@ -19,7 +20,7 @@ const SaveFileDisplay = ({save, setLoadId, setGetFiles}) => {
   return (
     <div className='m-5 p-5 border-8 border-double border-black flex flex-col items-center'>
         <p className='m-1 text-xl font-bold underline'>File: {save.id}</p>
-        <p className='m-1 text-xl'>Name: {save.name}</p>
+        <p className='m-1 text-xl'>Name: {name}</p>
         <p className='m-1 text-xl'>Level: {save.level}</p>
         <p className='m-1 text-xl'>Level Progress: {save.currentExp}/{save.nextLevel}</p>
         <div className='flex'>

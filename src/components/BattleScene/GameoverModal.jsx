@@ -27,6 +27,7 @@ const GameoverModal = ({setInitialize}) => {
         player.Character.hp = player.Character.maxHP
         if(authCtx.token){
             navigate('/Load')
+            setTimeout(() => {window.location.reload()}, 500)
         }else {
         setInitialize(true)
         navigate('/')

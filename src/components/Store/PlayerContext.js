@@ -16,7 +16,7 @@ const PlayerContext = createContext({
     totalHp: 0,
     totalAtk: 0,
     totalDef: 0,
-    totalDef: 0,
+    totalAgi: 0,
     levelUp: null,
     setWeaponSlot: () => {},
     setShieldSlot: () => {},

@@ -82,9 +82,17 @@ const Backdrop = () => {
     const handleNewGame = () => {
       if(saveFiles.length === 0){
         navigate('/Start')
+        setTimeout(() => {window.location.reload()}, 500) 
+        
       }else{
         setWarning(true)
+        
       }
+    }
+
+    const handleProceed = () => {
+      navigate('/Start')
+      setTimeout(() => {window.location.reload()}, 500) 
     }
 
     return(
@@ -95,16 +103,17 @@ const Backdrop = () => {
           <h1 className='m-5 text-red-600 text-center text-2xl font-extrabold italic underline'>WARNING!!! Starting a new game when you have Saves from another run may make it so you cannot use your previous file. <br/> I won't stop you, but I will tell you that it is ON YOU to manage your save files so that you don't loose your other game.</h1>
           <p className='text-center text-2xl font-extrabold italic underline'>Proceed anyway?</p>
           <div className='flex'>
-          <Button className='m-5 font-bold border-8 border-double border-black w-20 h-10 bg-clip-padding rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1' onClick={() => navigate('/Start')} type={'Yes!'}/>
+          <Button className='m-5 font-bold border-8 border-double border-black w-20 h-10 bg-clip-padding rounded-lg shadow-xl bg-green-500 hover:bg-green-300 focus:translate-y-1' onClick={() => handleProceed()} type={'Yes!'}/>
           <Button className='m-5 font-bold border-8 border-double border-black w-20 h-10 bg-clip-padding rounded-lg shadow-xl bg-red-500 hover:bg-red-300 focus:translate-y-1' onClick={() => setWarning(false)} type={'No!'}/>
           </div>
           </section>}
+          <div className='flex flex-wrap'>
           {saveFiles.map((save) => {
             return (
              <SaveFileDisplay save={save} setLoadId={setLoadId} setGetFiles={setGetFiles}/>
             )
           })} 
-      
+          </div>
         </div>
     )
   }

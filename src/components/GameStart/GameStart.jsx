@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import AuthContext from '../Store/authContext'
 import PlayerContext from '../Store/PlayerContext'
 import InventoryContext from '../Store/InventoryContext'
@@ -16,7 +16,9 @@ const GameStart = () => {
     const [name, setName] = useState('Arahc')
     const keyItems = KeyItems
 
+  
   const handleCharacter = () => {
+    
     Character.name = name
     let newItem = keyItems[0]
     console.log(newItem)
