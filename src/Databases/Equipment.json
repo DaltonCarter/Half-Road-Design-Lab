@@ -1,274 +1,224 @@
 [
-
-    {
+  {
     "id": 1,
     "type": "Weapon",
+    "weaponType": "Sword",
     "name": "Short Sword",
     "atkPwr": 5,
     "price": 500,
     "sellPrice": 150,
     "amount": 0,
     "desc": "A simple short sword, made so that even the untrained can use it."
-    },
+  },
 
-    {
-        "id": 2,
-        "type": "Weapon",
-        "name": "Long Sword",
-        "atkPwr": 10,
-        "price": 1500,
-        "sellPrice": 650,
-        "amount": 0,
-        "desc": "A standard foot soldiers sword."
-        },
+  {
+    "id": 2,
+    "type": "Weapon",
+    "weaponType": "Sword",
+    "name": "Gladius",
+    "atkPwr": 10,
+    "price": 1500,
+    "sellPrice": 650,
+    "amount": 0,
+    "desc": "A short skirmishers blade."
+  },
 
-        {
-            "id": 3,
-            "type": "Shield",
-            "name": "Buckler",
-            "defPwr": 3,
-            "price": 200,
-            "sellPrice": 100,
-            "amount": 0,
-            "desc": "A small easy to use shield."
-        },
-
-        {
-            "id": 4,
-            "type": "Helm",
-            "name": "Leather Helmet",
-            "defPwr": 2,
-            "price": 100,
-            "sellPrice": 50,
-            "amount": 0,
-            "desc": "A light helmet made from tanned leather."
-        },
-
-    {
-        "id": 5,
-        "type": "Armor",
-        "name": "Leather Armor",
-        "defPwr": 5,
-        "price": 500,
-        "sellPrice": 200,
-        "amount": 0,
-        "desc": "A suit of light armor made from tanned leather."
-    },
-
-    {
-        "id": 6,
-        "type": "Accessory",
-        "name": "Charm",
-        "hp": 10,
-        "atkPwr": 2,
-        "defPwr": 0,
-        "agi": 2,
-        "price": 800,
-        "sellPrice": 250,
-        "amount": 0,
-        "desc": "A strange necklace that supposedly protects the wearer."
-    },
-    {
-        "id": 7,
-        "type": "Weapon",
-        "name": "War Sword",
-        "atkPwr": 15,
-        "price": 3000,
-        "sellPrice": 1250,
-        "amount": 0,
-        "desc": "A heavy sword best used with all your might."
-        },
-        {
-            "id": 8,
-            "type": "Weapon",
-            "name": "Knights Sword",
-            "atkPwr": 20,
-            "price": 5000,
-            "sellPrice": 2300,
-            "amount": 0,
-            "desc": "A finely crafted sword with good reach."
-            },
-            {
-                "id": 9,
-                "type": "Weapon",
-                "name": "Dragon Sword",
-                "atkPwr": 30,
-                "price": 8000,
-                "sellPrice": 3500,
-                "amount": 0,
-                "desc": "A sword forged from the talons of a dragon."
-                },
-                {
-                    "id": 10,
-                    "type": "Shield",
-                    "name": "Round Shield",
-                    "defPwr": 6,
-                    "price": 600,
-                    "sellPrice": 250,
-                    "amount": 0,
-                    "desc": "A round wooden shield with Iron bands."
-                },
-                {
-                    "id": 11,
-                    "type": "Shield",
-                    "name": "Targe",
-                    "defPwr": 9,
-                    "price": 1200,
-                    "sellPrice": 500,
-                    "amount": 0,
-                    "desc": "A concave shield made of Iron."
-                },
-                {
-                    "id": 12,
-                    "type": "Shield",
-                    "name": "Heater Shield",
-                    "defPwr": 12,
-                    "price": 2400,
-                    "sellPrice": 1000,
-                    "amount": 0,
-                    "desc": "Made of iron, this shield resembles a Kite Shield."
-                },
-                {
-                    "id": 13,
-                    "type": "Shield",
-                    "name": "Dragon Shield",
-                    "defPwr": 15,
-                    "price": 4000,
-                    "sellPrice": 1500,
-                    "amount": 0,
-                    "desc": "A special Heater shield made from the hide and scales of a dragon."
-                },
-                {
-                    "id": 14,
-                    "type": "Helm",
-                    "name": "Chain Coif",
-                    "defPwr": 4,
-                    "price": 300,
-                    "sellPrice": 100,
-                    "amount": 0,
-                    "desc": "A simple helm made of iron ringlets."
-                },
-                {
-                    "id": 15,
-                    "type": "Helm",
-                    "name": "Iron Helmet",
-                    "defPwr": 6,
-                    "price": 1000,
-                    "sellPrice": 350,
-                    "amount": 0,
-                    "desc": "A standard soldiers Helm made of Iron."
-                },
-                {
-                    "id": 16,
-                    "type": "Helm",
-                    "name": "Full Helmet",
-                    "defPwr": 8,
-                    "price": 2000,
-                    "sellPrice": 900,
-                    "amount": 0,
-                    "desc": "A heavy helm that completely protects the face."
-                },
-                {
-                    "id": 17,
-                    "type": "Helm",
-                    "name": "Dragon Helmet",
-                    "defPwr": 10,
-                    "price": 5000,
-                    "sellPrice": 2300,
-                    "amount": 0,
-                    "desc": "A powerful helm made from dragon scales."
-                },
-                {
-                    "id": 18,
-                    "type": "Armor",
-                    "name": "Chain Mail",
-                    "defPwr": 10,
-                    "price": 1500,
-                    "sellPrice": 700,
-                    "amount": 0,
-                    "desc": "A suit of armor made of interlocked ringlets."
-                },
-                {
-                    "id": 19,
-                    "type": "Armor",
-                    "name": "Iron Armor",
-                    "defPwr": 15,
-                    "price": 3000,
-                    "sellPrice": 1250,
-                    "amount": 0,
-                    "desc": "A standard suit of iron armor."
-                },
-                {
-                    "id": 20,
-                    "type": "Armor",
-                    "name": "Plate Mail",
-                    "defPwr": 20,
-                    "price": 5000,
-                    "sellPrice": 2300,
-                    "amount": 0,
-                    "desc": "A heavy suit of armor made from overlapped plates."
-                },
-                {
-                    "id": 21,
-                    "type": "Armor",
-                    "name": "Dragon Mail",
-                    "defPwr": 30,
-                    "price": 8000,
-                    "sellPrice": 3500,
-                    "amount": 0,
-                    "desc": "A suit of armor made of dragon scales."
-                },
-                {
-                    "id": 22,
-                    "type": "Accessory",
-                    "name": "Defender Charm",
-                    "hp": 100,
-                    "atkPwr": 0,
-                    "defPwr": 15,
-                    "agi": 0,
-                    "price": 10000,
-                    "sellPrice": 4500,
-                    "amount": 0,
-                    "desc": "A charm that increases your HP, and Defense."
-                },
-                {
-                    "id": 23,
-                    "type": "Accessory",
-                    "name": "Warrior Charm",
-                    "hp": 0,
-                    "atkPwr": 15,
-                    "defPwr": 0,
-                    "agi": 15,
-                    "price": 10000,
-                    "sellPrice": 4500,
-                    "amount": 0,
-                    "desc": "A Charm that increases your attack and Agility."
-                },
-                {
-                    "id": 24,
-                    "type": "Accessory",
-                    "name": "Survivor Charm",
-                    "hp": 100,
-                    "atkPwr": 0,
-                    "defPwr": 0,
-                    "agi": 15,
-                    "price": 10000,
-                    "sellPrice": 4500,
-                    "amount": 0,
-                    "desc": "A Charm that increases your HP and Agility."
-                },
-                {
-                    "id": 25,
-                    "type": "Accessory",
-                    "name": "Dragon Charm",
-                    "hp": 100,
-                    "atkPwr": 15,
-                    "defPwr": 15,
-                    "agi": 15,
-                    "price": 25000,
-                    "sellPrice": 8000,
-                    "amount": 0,
-                    "desc": "A strange gem that increases ALL stats."
-                }
-                    
+  {
+    "id": 3,
+    "type": "Weapon",
+    "weaponType": "Sword",
+    "name": "Long Sword",
+    "atkPwr": 15,
+    "price": 3000,
+    "sellPrice": 1250,
+    "amount": 0,
+    "desc": "A common soldiers sword."
+  },
+  {
+    "id": 4,
+    "type": "Weapon",
+    "weaponType": "Sword",
+    "name": "War Sword",
+    "atkPwr": 20,
+    "price": 5000,
+    "sellPrice": 2300,
+    "amount": 0,
+    "desc": "A heavy blade best used with all your might."
+  },
+  {
+    "id": 5,
+    "type": "Weapon",
+    "weaponType": "Sword",
+    "name": "Peace Keeper",
+    "atkPwr": 35,
+    "price": 7500,
+    "sellPrice": 3750,
+    "amount": 0,
+    "desc": "A finely crafted blade, favored by he knighthood."
+  },
+  {
+    "id": 6,
+    "type": "Weapon",
+    "weaponType": "Sword",
+    "name": "Bastard Sword",
+    "atkPwr": 50,
+    "price": 10000,
+    "sellPrice": 5000,
+    "amount": 0,
+    "desc": "A large sword that can be used with one hand or two."
+  },
+  {
+    "id": 7,
+    "type": "Weapon",
+    "weaponType": "Sword",
+    "name": "Ulfberht",
+    "atkPwr": 65,
+    "price": 15000,
+    "sellPrice": 7500,
+    "amount": 0,
+    "desc": "A deadly type of sword favored by the Vikangn."
+  },
+  {
+    "id": 8,
+    "type": "Weapon",
+    "weaponType": "Sword",
+    "name": "Avenger",
+    "atkPwr": 85,
+    "price": 20000,
+    "sellPrice": 10000,
+    "amount": 0,
+    "desc": "A deadly sword, often used in duels."
+  },
+  {
+    "id": 9,
+    "type": "Weapon",
+    "weaponType": "Sword",
+    "name": "Veinslay",
+    "atkPwr": 90,
+    "price": 30000,
+    "sellPrice": 15000,
+    "amount": 0,
+    "desc": "A sword forged from the talons of a mighty dragon."
+  },
+  {
+    "id": 10,
+    "type": "Weapon",
+    "weaponType": "Sword",
+    "name": "Glandria",
+    "atkPwr": 110,
+    "price": 50000,
+    "sellPrice": 25000,
+    "amount": 0,
+    "desc": "A mysterious sword often spoken of in myth as the Hero Maker."
+  },
+  {
+    "id": 11,
+    "type": "Weapon",
+    "weaponType": "Staff",
+    "name": "Oak Staff",
+    "atkPwr": 3,
+    "price": 500,
+    "sellPrice": 250,
+    "amount": 0,
+    "desc": "A length of finely crafted wood, favored by clerics ."
+  },
+  {
+    "id": 12,
+    "type": "Weapon",
+    "weaponType": "Staff",
+    "name": "Novice Staff",
+    "atkPwr": 6,
+    "price": 1500,
+    "sellPrice": 750,
+    "amount": 0,
+    "desc": "A staff infused with some magic, given to students."
+  },
+  {
+    "id": 13,
+    "type": "Weapon",
+    "weaponType": "Staff",
+    "name": "Cleric Staff",
+    "atkPwr": 9,
+    "price": 2500,
+    "sellPrice": 1250,
+    "amount": 0,
+    "desc": "A blessed staff used by church healers."
+  },
+  {
+    "id": 14,
+    "type": "Weapon",
+    "weaponType": "Ashen Staff",
+    "name": " Staff",
+    "atkPwr": 12,
+    "price": 4000,
+    "sellPrice": 2000,
+    "amount": 0,
+    "desc": "A blessed staff made of Ash Wood."
+  },
+  {
+    "id": 15,
+    "type": "Weapon",
+    "weaponType": "Staff",
+    "name": "Celestial Staff",
+    "atkPwr": 15,
+    "price": 5500,
+    "sellPrice": 2750,
+    "amount": 0,
+    "desc": "A divine master healers staff."
+  },
+  {
+    "id": 16,
+    "type": "Weapon",
+    "weaponType": "Staff",
+    "name": "Starlight Staff",
+    "atkPwr": 18,
+    "price": 8000,
+    "sellPrice": 4000,
+    "amount": 0,
+    "desc": "A powerful clerics staff that shines like a star."
+  },
+  {
+    "id": 17,
+    "type": "Weapon",
+    "weaponType": "Staff",
+    "name": "Dragon Staff",
+    "atkPwr": 30,
+    "price": 12000,
+    "sellPrice": 6000,
+    "amount": 0,
+    "desc": "A staff said to hold the spirit of a Gold Dragon."
+  },
+  {
+    "id": 18,
+    "type": "Weapon",
+    "weaponType": "Staff",
+    "name": "Arch Cleric Staff",
+    "atkPwr": 35,
+    "price": 14000,
+    "sellPrice": 7000,
+    "amount": 0,
+    "desc": "A staff given only to the most accomplished of healers."
+  },
+  {
+    "id": 19,
+    "type": "Weapon",
+    "weaponType": "Staff",
+    "name": "Abraxa",
+    "atkPwr": 40,
+    "price": 20000,
+    "sellPrice": 10000,
+    "amount": 0,
+    "desc": "This staff embodies the skill and power of a legendary cleric."
+  },
+  {
+    "id": 20,
+    "type": "Weapon",
+    "weaponType": "Staff",
+    "name": "Nirvana",
+    "atkPwr": 60,
+    "price": 30000,
+    "sellPrice": 15000,
+    "amount": 0,
+    "desc": "This divine staff is said to have been a gift from a lost Goddess."
+  }
 ]
