@@ -36,7 +36,7 @@
     "amount": 0
 },
 
-{
+{~
     "id": 10,
     "name": "Antidote",
     "desc": "Cures an ally of poison.",

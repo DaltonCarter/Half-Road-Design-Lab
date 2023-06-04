@@ -401,85 +401,205 @@
     "id": 34,
     "type": "Weapon",
     "weaponType": "Bow",
-    "name": "",
+    "name": "Horn Bow",
     "atkPwr": 24,
     "magPwr": 0,
     "price": 5000,
     "sellPrice": 2500,
     "amount": 0,
-    "desc": "."
+    "desc": "A bow favored by Dwarves, made from an unyeilding Horn."
   },
   {
     "id": 35,
     "type": "Weapon",
     "weaponType": "Bow",
-    "name": "",
+    "name": "Elven Bow",
     "atkPwr": 40,
     "magPwr": 0,
     "price": 6500,
     "sellPrice": 3250,
     "amount": 0,
-    "desc": "."
+    "desc": "A strong and deadly accurate bow, crafted and used by the Elves."
   },
   {
     "id": 36,
     "type": "Weapon",
     "weaponType": "Bow",
-    "name": "",
+    "name": "Runed Bow",
     "atkPwr": 56,
     "magPwr": 0,
     "price": 9000,
     "sellPrice": 4500,
     "amount": 0,
-    "desc": "."
+    "desc": "A bow inscribed with powerful magic runes to increase effectiveness."
   },
   {
     "id": 37,
     "type": "Weapon",
     "weaponType": "Bow",
-    "name": "",
+    "name": "Archwood Bow",
     "atkPwr": 72,
     "magPwr": 0,
     "price": 14000,
     "sellPrice": 7000,
     "amount": 0,
-    "desc": "."
+    "desc": "An exotic bow made from wood rich in natural magic."
   },
   {
     "id": 38,
     "type": "Weapon",
     "weaponType": "Bow",
-    "name": "",
+    "name": "Faerdan",
     "atkPwr": 88,
     "magPwr": 0,
     "price": 16000,
     "sellPrice": 8000,
     "amount": 0,
-    "desc": "."
+    "desc": "Named after a famed half-elf archer, this bow never misses."
   },
   {
     "id": 39,
     "type": "Weapon",
     "weaponType": "Bow",
-    "name": "",
+    "name": "Dragons Bow",
     "atkPwr": 104,
     "magPwr": 0,
     "price": 30000,
     "sellPrice": 15000,
     "amount": 0,
-    "desc": "."
+    "desc": "A dangerous weapon magically crafted from the horns of a dragon."
   },
   {
     "id": 40,
     "type": "Weapon",
     "weaponType": "Bow",
-    "name": "",
+    "name": "Alaedra",
     "atkPwr": 120,
     "magPwr": 0,
     "price": 60000,
     "sellPrice": 30000,
     "amount": 0,
-    "desc": "."
+    "desc": "A Mythical bow once used by a great Elven Hero of ages past."
+  },
+  {
+    "id": 41,
+    "type": "Weapon",
+    "weaponType": "Dagger",
+    "name": "Knife",
+    "atkPwr": 3,
+    "magPwr": 0,
+    "price": 400,
+    "sellPrice": 200,
+    "amount": 0,
+    "desc": "A simple crude knife."
+  },
+  {
+    "id": 42,
+    "type": "Weapon",
+    "weaponType": "Dagger",
+    "name": "Chefs Knife",
+    "atkPwr": 8,
+    "magPwr": 0,
+    "price": 800,
+    "sellPrice": 400,
+    "amount": 0,
+    "desc": "An extremely sharp knife commonly used by a particular monster."
+  },
+  {
+    "id": 43,
+    "type": "Weapon",
+    "weaponType": "Dagger",
+    "name": "Survival Knife",
+    "atkPwr": 13,
+    "magPwr": 0,
+    "price": 1600,
+    "sellPrice": 800,
+    "amount": 0,
+    "desc": "A knife common in the military, pized for it's versatility."
+  },
+  {
+    "id": 44,
+    "type": "Weapon",
+    "weaponType": "Dagger",
+    "name": "Mage Masher",
+    "atkPwr": 18,
+    "magPwr": 10,
+    "price": 2400,
+    "sellPrice": 1200,
+    "amount": 0,
+    "desc": "An enchanted dagger, favored by Mage hunters."
+  },
+  {
+    "id": 45,
+    "type": "Weapon",
+    "weaponType": "Dagger",
+    "name": "Mythril Dagger",
+    "atkPwr": 30,
+    "magPwr": 0,
+    "price": 5000,
+    "sellPrice": 2500,
+    "amount": 0,
+    "desc": "A rare dagger forged with the magical metal."
+  },
+  {
+    "id": 46,
+    "type": "Weapon",
+    "weaponType": "Dagger",
+    "name": "Assassins Dagger",
+    "atkPwr": 40,
+    "magPwr": 0,
+    "price": 7500,
+    "sellPrice": 3750,
+    "amount": 0,
+    "desc": "A wicked dagger favored by assassins, for it's thin keen edge."
+  },
+  {
+    "id": 47,
+    "type": "Weapon",
+    "weaponType": "Dagger",
+    "name": "Runed Dagger",
+    "atkPwr": 60,
+    "magPwr": 25,
+    "price": 10000,
+    "sellPrice": 5000,
+    "amount": 0,
+    "desc": "A Vikangn dagger inscribed with magical runes."
+  },
+  {
+    "id": 48,
+    "type": "Weapon",
+    "weaponType": "Dagger",
+    "name": "Astral Dagger",
+    "atkPwr": 75,
+    "magPwr": 35,
+    "price": 13000,
+    "sellPrice": 6500,
+    "amount": 0,
+    "desc": "A rare dagger forged from a meteorite, prized by mages."
+  },
+  {
+    "id": 49,
+    "type": "Weapon",
+    "weaponType": "Dagger",
+    "name": "Dragons Fang",
+    "atkPwr": 90,
+    "magPwr": 45,
+    "price": 25000,
+    "sellPrice": 12500,
+    "amount": 0,
+    "desc": "A wicked dagger forged using the incisor of a dragon."
+  },
+  {
+    "id": 50,
+    "type": "Weapon",
+    "weaponType": "Dagger",
+    "name": "Thevaer",
+    "atkPwr": 100,
+    "magPwr": 55,
+    "price": 40000,
+    "sellPrice": 20000,
+    "amount": 0,
+    "desc": "A mythical dagger, said to have been gifted to a legendary theif."
   }
   
 ]
