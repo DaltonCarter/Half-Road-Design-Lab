@@ -1073,13 +1073,145 @@
     "id": 90,
     "type": "Weapon",
     "weaponType": "Claw",
-    "name": "Hand of judgement",
+    "name": "Hand of Judgement",
     "atkPwr": 115,
     "magPwr": 0,
     "price": 24000,
     "sellPrice": 12000,
     "amount": 0,
     "desc": "Mythical claws blessed by a God, to bring Justice to the wicked."
-  }
-  
+  },
+  {
+    "id": 91,
+    "type": "Small Shield",
+    "name": "Buckler",
+    "defPwr": 3,
+    "mdfpwr": 0,
+    "price": 200,
+    "sellPrice": 100,
+    "amount": 0,
+    "desc": "A small easy to use shield."
+},
+{
+    "id": 92,
+    "type": "Small Shield",
+    "name": "Round Shield",
+    "defPwr": 6,
+    "mdfpwr": 0,
+    "price": 600,
+    "sellPrice": 250,
+    "amount": 0,
+    "desc": "A round wooden shield with Iron bands."
+},
+{
+    "id": 93,
+    "type": "Small Shield",
+    "name": "Targe",
+    "defPwr": 10,
+    "mdfpwr": 3,
+    "price": 1200,
+    "sellPrice": 500,
+    "amount": 0,
+    "desc": "A concave shield made of Iron."
+},
+{
+    "id": 94,
+    "type": "Small Shield",
+    "name": "Spiked Shield",
+    "defPwr": 15,
+    "mdfpwr": 5,
+    "price": 2400,
+    "sellPrice": 1000,
+    "amount": 0,
+    "desc": "A banded shield, adorned with spikes for shield bashing."
+},
+{
+    "id": 95,
+    "type": "Small Shield",
+    "name": "Magic Shield",
+    "defPwr": 25,
+    "mdfpwr": 30,
+    "price": 4000,
+    "sellPrice": 2000,
+    "amount": 0,
+    "desc": "An enchanted iron shield perfect for mages."
+},
+{
+  "id": 96,
+  "type": "Small Shield",
+  "name": "Dragon Targe",
+  "defPwr": 35,
+  "mdfpwr": 45,
+  "price": 6000,
+  "sellPrice": 3000,
+  "amount": 0,
+  "desc": "A concave iron shield covered in dragon hide."
+},
+{
+  "id": 97,
+  "type": "Shield",
+  "name": "Heater Shield",
+  "defPwr": 15,
+  "mdfpwr": 5,
+  "price": 2400,
+  "sellPrice": 1000,
+  "amount": 0,
+  "desc": "Made of iron, this shield resembles a Kite Shield."
+},
+{
+  "id": 98,
+  "type": "Shield",
+  "name": "Knights Shield",
+  "defPwr": 25,
+  "mdfpwr": 10,
+  "price": 4000,
+  "sellPrice": 1500,
+  "amount": 0,
+  "desc": "A strong shield emblazoned with the knighthoods crest."
+},
+{
+  "id": 99,
+  "type": "Shield",
+  "name": "Tower Shield",
+  "defPwr": 35,
+  "mdfpwr": 10,
+  "price": 6000,
+  "sellPrice": 3000,
+  "amount": 0,
+  "desc": "A tall heavy shield that covers most of the body."
+},
+{
+  "id": 100,
+  "type": "Shield",
+  "name": "Gothic Shield",
+  "defPwr": 45,
+  "mdfpwr": 15,
+  "price": 8000,
+  "sellPrice": 4000,
+  "amount": 0,
+  "desc": "A strong shield with a pointed bottom for stabbing."
+},
+{
+  "id": 101,
+  "type": "Shield",
+  "name": "Dragons Shield",
+  "defPwr": 55,
+  "mdfpwr": 20,
+  "price": 12000,
+  "sellPrice": 6000,
+  "amount": 0,
+  "desc": "A shield Made of mythril, dragon hide, and dragon scales."
+},
+{
+  "id": 102,
+  "type": "Shield",
+  "name": "Kaldain Shield",
+  "defPwr": 65,
+  "mdfpwr": 30,
+  "price": 20000,
+  "sellPrice": 10000,
+  "amount": 0,
+  "desc": "A legendary shield once weilded by a forgotten hero."
+}
+ 
 ]
